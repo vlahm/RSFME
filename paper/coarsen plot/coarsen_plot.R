@@ -64,33 +64,58 @@ nth_element <- function(vector, starting_position, n) {
 
 coarse_chem <- list()
 loopid = 0
-for(i in seq(from = 1, to = nrow(dn)/2, by = 4)){
-#for(i in (1:186)^2){
-loopid <- loopid+1
-n = floor(nrow(dn)/i)
-coarse_chem[[loopid]] <- tibble(date =  nth_element(dn$datetime, 1, n = n),
-                                con = nth_element(dn$IS_NO3, 1, n = n))
-names(coarse_chem)[loopid] <- paste0('sample_',n)
+loop_vec <- c(seq(from = 1, to = 92, by = 4),
+              seq(from = 96, to = 672, by = 96),
+              3592,
+              6512)
+reps <- 100
+for(i in loop_vec){
+n = i
+    for(j in 1:reps){
+    loopid <- loopid+1
+    start_pos <- sample(1:n, size = 1)
+    coarse_chem[[loopid]] <- tibble(date =  nth_element(dn$datetime, 1, n = start_pos),
+                                    con = nth_element(dn$IS_NO3, 1, n = start_pos))
+    names(coarse_chem)[loopid] <- paste0('sample_',n)
+    }
 }
+
+
+
 
 # apply flux methods to each #####
 apply_methods_coarse <- function(chem_df, q_df){
-    out <- tibble(method = as.character(), estimate = as.numeric())
+    n = nrow(chem_df)
+
+    out <- tibble(method = as.character(), estimate = as.numeric(), se)
     #pw
     out[1,2] <- calculate_pw(chem_df, q_df)
+    theta <- function(x, chem_df, q_df){calculate_pw(chem_df[x,], q_df, datecol = 'datetime') }
+    out_jack[1,3] <- jackknife(1:n,theta, chem_df, q_df)$jack.se
     #beale
     out[2,2] <- calculate_beale(chem_df, q_df)
+    theta <- function(x, chem_df, q_df){calculate_beale(chem_df[x,], q_df, datecol = 'datetime') }
+    out_jack[2,3] <- jackknife(1:n,theta, chem_df, q_df)$jack.se
     #rating
     out[3,2] <- calculate_rating(chem_df, q_df)
+    theta <- function(x, chem_df, q_df){calculate_rating(chem_df[x,], q_df, datecol = 'datetime') }
+    out_jack[3,3] <- jackknife(1:n,theta, chem_df, q_df)$jack.se
     #comp
     out[4,2] <- generate_residual_corrected_con(chem_df = chem_df, q_df = q_df, sitecol = 'site_code') %>%
         rename(datetime = date) %>%
         calculate_composite_from_rating_filled_df() %>%
         pull(flux)
 
+    theta <- function(x, chem_df, q_df){generate_residual_corrected_con(chem_df = chem_df[x,], q_df = q_df, sitecol = 'site_code') %>%
+            rename(datetime = date) %>%
+            calculate_composite_from_rating_filled_df() %>%
+            pull(flux) }
+    out_jack[4,3] <- jackknife(1:n,theta, chem_df, q_df)$jack.se
+
     out$method <- c('pw', 'beale', 'rating', 'composite')
     return(out)
 }
+
 
 out_tbl <- tibble(method = as.character(), estimate = as.numeric(), n = as.integer())
 for(i in 2:length(coarse_chem)){
@@ -110,7 +135,7 @@ for(i in 2:length(coarse_chem)){
         mutate(n = n) %>%
         rbind(., out_tbl)
 }
-
+load('paper/coarsen plot/100repswithbootstrap_v2.RData')
 
 plot_tbl <- out_tbl %>%
     unique() %>%
@@ -121,16 +146,20 @@ plot_tbl <- out_tbl %>%
            hours = n/4)
 
 plot_tbl %>%
-ggplot(., aes(x = hours, y = estimate))+
+    group_by(method, hours) %>%
+    mutate(min = min(estimate), max = max(estimate), median = median(estimate)) %>%
+ggplot(., aes(x = hours, y = median))+
     geom_hline(yintercept = truth$estimate[1])+
     geom_line()+
-    geom_point()+
+    #geom_point()+
+    geom_ribbon(aes(ymin = min, ymax = max), alpha = .2 )+
     facet_wrap(vars(method), ncol = 1)+
     #scale_y_reverse(limits = c(100,0)) +
     labs(x = 'Frequency (hours)',
          y = 'Estimate (kg/hr/yr)',
          caption = '15 minute NO3 data from HBEF W3 2016 WY resampled by every nth measurement, compared to truth using every sample and the composite method.
-         \n Lines indicate hourly, daily, weekly, biweekly, monthly, and bimonthly intervals.')+
+         \n Vertical lines indicate hourly, daily, weekly, biweekly, monthly, and bimonthly intervals.
+         \n Black line is the median prediction and grey area the range of possible predictions.')+
     theme_classic()+
     theme(text = element_text(size = 20))+
     geom_vline(xintercept = 1)+ #hourly
@@ -139,7 +168,7 @@ ggplot(., aes(x = hours, y = estimate))+
     geom_vline(xintercept = 192)+ #biweekly
     geom_vline(xintercept = 384)+ #monthly
     geom_vline(xintercept = 768)+ #bimonthly
-    annotate('rect', xmin = 0, xmax = 1750,
+    annotate('rect', xmin = 0, xmax = 1600,
              ymin = truth$estimate[1]*.95, ymax = truth$estimate[1]*1.05, fill = 'green', alpha = .1)
 
 
