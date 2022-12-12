@@ -8,6 +8,8 @@ library(lfstat)
 library(lubridate)
 library(ggpubr)
 library(patchwork)
+library(RiverLoad)
+library(cowplot)
 
 set.seed(53045)
 
@@ -16,13 +18,23 @@ source(here('source/flux_methods.R'))
 
 thin_freq <- 'biweekly'
 #thin_freq <- 'monthly'
+period <- 'month'
+reps = 100
+
 
 area <- 42.4
 site_code = 'w3'
 # loop start #####
+if(is.null(period) | period == 'annual'){
 loop_out <- tibble(method = as.character(), estimate = as.numeric(),
                   flow = as.character(), cq = as.character(), runid = as.integer())
-for(i in 1:50){
+}
+if(period == 'month'){
+    loop_out <- tibble(method = as.character(), date = as.character(), estimate = as.numeric(),
+                       flow = as.character(), cq = as.character(), runid = as.integer())
+}
+
+for(i in 1:reps){
 #ts_len = 1000
 d <- read_feather('C:/Users/gubbi/desktop/w3_sensor_wdisch.feather') %>%
     mutate(wy = water_year(datetime, origin = 'usgs'))
@@ -175,7 +187,7 @@ for(j in 1:length(simulated_series[[1]])){
 
 #### two part dilution ####
 ##### fit lm to sp ts ####
-fit_cond <- lm(log10(dn$IS_spCond)~log10(dn$IS_discharge), data = dn)
+fit_cond <- lm(log10(dn$IS_spCond*0.06)~log10(dn$IS_discharge), data = dn)
 inter_range <- runif(1000, min = confint(fit_cond)[1,1], max = confint(fit_cond)[1,2])
 coef_range <- runif(1000, min = confint(fit_cond)[2,1], max = confint(fit_cond)[2,2])
 error_range <- rnorm(1000, mean = 0, sd = sd(dn$IS_spCond)/2)
@@ -250,7 +262,8 @@ out <- q_df %>%
     select(date, q_lps)
 }
 
-calculate_truth <- function(raw_chem_list, q_df, flow_regime = NULL, cq = NULL){
+calculate_truth <- function(raw_chem_list, q_df, period = period, flow_regime = NULL, cq = NULL){
+    if(is.null(period) | period == 'annual'){
     chem_df <- tibble(datetime = dn$datetime, con = raw_chem_list) %>%
         group_by(lubridate::yday(datetime)) %>%
         summarize(date = date(datetime),
@@ -269,11 +282,43 @@ calculate_truth <- function(raw_chem_list, q_df, flow_regime = NULL, cq = NULL){
         pull(flux)
     out <- tibble(method = 'truth', estimate = out_val,
                   flow = flow_regime, cq = cq)
+    }
+    if(period == 'month'){
+    chem_df <- tibble(datetime = dn$datetime, con = raw_chem_list) %>%
+        group_by(lubridate::yday(datetime)) %>%
+        summarize(date = date(datetime),
+                  con = mean(con)) %>%
+        ungroup() %>%
+        unique() %>%
+        select(date, con) %>%
+        mutate(site_code = 'w3', wy = target_wy)
+
+    q_df_add <- q_df %>%
+        mutate(site_code = 'w3', wy = target_wy)
+
+    out_val <- generate_residual_corrected_con(chem_df = chem_df, q_df = q_df, sitecol = 'site_code') %>%
+        select(datetime = date, q_lps, con, con_com, wy) %>%
+        calculate_composite_from_rating_filled_df(., period = 'month') %>%
+        mutate(method = 'truth',
+               date_fixed = paste0(
+                   str_split_fixed(as.character(date), '-', n = 3)[,1],
+                   '-',
+                   str_split_fixed(as.character(date), '-', n = 3)[,2]
+               )
+        ) %>%
+        ungroup()%>%
+        select(method, date = date_fixed,
+               estimate = flux) %>%
+        mutate(flow = flow_regime, cq = cq)
+
+    out <- out_val
+    }
 
     return(out)
 }
 
-apply_methods <- function(chem_df, q_df, flow_regime = NULL, cq = NULL){
+apply_methods <- function(chem_df, q_df, period = period, flow_regime = NULL, cq = NULL){
+    if(is.null(period) | period == 'annual'){
     out <- tibble(method = as.character(), estimate = as.numeric(),
                   flow = as.character(), cq = as.character())
     #pw
@@ -291,12 +336,57 @@ apply_methods <- function(chem_df, q_df, flow_regime = NULL, cq = NULL){
     out$method <- c('pw', 'beale', 'rating', 'composite')
     out$flow <- flow_regime
     out$cq <- cq
+    }
+    if(period == 'month'){
+    out <- tibble(method = as.character(), date = as_date(NA), estimate = as.numeric(),
+                  flow = as.character(), cq = as.character())
+    #pw
+    out_pw <- calculate_pw(chem_df, q_df, datecol = 'date', period = 'month') %>%
+        mutate(method = 'pw') %>%
+        select(method, date, estimate = flux)
+    #beale
+    out_beale <- calculate_beale(chem_df, q_df, datecol = 'date', period = 'month') %>%
+        mutate(method = 'beale')%>%
+        select(method, date = date, estimate = flux)
+    #rating
+    out_rating <- calculate_rating(chem_df, q_df, datecol = 'date', period = 'month') %>%
+        mutate(method = 'rating')%>%
+        select(method, date, estimate = flux)
+    #comp
+    out_comp <- generate_residual_corrected_con(chem_df = chem_df, q_df = q_df, sitecol = 'site_code') %>%
+        select(datetime = date, q_lps, con, con_com, wy) %>%
+        calculate_composite_from_rating_filled_df(., period = 'month') %>%
+        mutate(method = 'composite',
+               date_fixed = paste0(
+                   str_split_fixed(as.character(date), '-', n = 3)[,1],
+                   '-',
+                   str_split_fixed(as.character(date), '-', n = 3)[,2]
+                                      )
+               ) %>%
+        ungroup()%>%
+        select(method, date = date_fixed,
+               estimate = flux)
+
+    out <- rbind(out_pw, out_beale, out_rating, out_comp) %>%
+        mutate(date)
+
+    out$flow <- flow_regime
+    out$cq <- cq
+    }
+
+
     return(out)
 
+
 }
+if(is.null(period) | period == 'annual'){
 run_out <- tibble(method = as.character(), estimate = as.numeric(),
                   flow = as.character(), cq = as.character())
-
+}
+if(period == 'month'){
+    run_out <- tibble(method = as.character(), date = as.character(), estimate = as.numeric(),
+                      flow = as.character(), cq = as.character())
+}
 ### chemostatic ####
 q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[1]])) %>%
     mutate(site_code = 'w3', wy = target_wy)
@@ -308,11 +398,11 @@ chem_df <- coarsen_data(tibble(datetime = dn$datetime, con = simulated_series[[4
 
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[4]], q_df, flow_regime = 'unaltered', cq = 'chemostatic'),
+    calculate_truth(raw_chem_list = simulated_series[[4]], q_df, period = period, flow_regime = 'unaltered', cq = 'chemostatic'),
     run_out)
 # apply
 run_out <- rbind(
-    apply_methods(chem_df, q_df, flow_regime = 'unaltered', cq = 'chemostatic'),
+    apply_methods(chem_df, q_df, period = period, flow_regime = 'unaltered', cq = 'chemostatic'),
     run_out)
 
 ##### under storm domination ####
@@ -320,11 +410,11 @@ q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[2]
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[4]], q_df, flow_regime = 'storm', cq = 'chemostatic'),
+    calculate_truth(raw_chem_list = simulated_series[[4]], q_df, period = period, flow_regime = 'storm', cq = 'chemostatic'),
     run_out)
 # apply
 run_out <- rbind(
-    apply_methods(chem_df, q_df, flow_regime = 'storm', cq = 'chemostatic'),
+    apply_methods(chem_df, q_df, period = period, flow_regime = 'storm', cq = 'chemostatic'),
     run_out)
 
 ##### under base domination ####
@@ -332,11 +422,11 @@ q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[3]
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[4]], q_df, flow_regime = 'base', cq = 'chemostatic'),
+    calculate_truth(raw_chem_list = simulated_series[[4]], q_df, period = period, flow_regime = 'base', cq = 'chemostatic'),
     run_out)
 # apply
 run_out <- rbind(
-    apply_methods(chem_df, q_df, flow_regime = 'base', cq = 'chemostatic'),
+    apply_methods(chem_df, q_df, period = period,flow_regime = 'base', cq = 'chemostatic'),
     run_out)
 
 ### no pattern ####
@@ -350,11 +440,11 @@ q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[1]
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[5]], q_df, flow_regime = 'unaltered', cq = 'none'),
+    calculate_truth(raw_chem_list = simulated_series[[5]], q_df, period = period, flow_regime = 'unaltered', cq = 'none'),
     run_out)
 # apply
 run_out <- rbind(
-    apply_methods(chem_df, q_df, flow_regime = 'unaltered', cq = 'none'),
+    apply_methods(chem_df, q_df, period = period,flow_regime = 'unaltered', cq = 'none'),
     run_out)
 
 ##### under storm domination ####
@@ -362,11 +452,11 @@ q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[2]
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[5]], q_df, flow_regime = 'storm', cq = 'none'),
+    calculate_truth(raw_chem_list = simulated_series[[5]], q_df, period = period, flow_regime = 'storm', cq = 'none'),
     run_out)
 # apply
 run_out <- rbind(
-    apply_methods(chem_df, q_df, flow_regime = 'storm', cq = 'none'),
+    apply_methods(chem_df, q_df, period = period, flow_regime = 'storm', cq = 'none'),
     run_out)
 
 ##### under base domination ####
@@ -374,11 +464,11 @@ q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[3]
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[4]], q_df, flow_regime = 'base', cq = 'none'),
+    calculate_truth(raw_chem_list = simulated_series[[4]], q_df, period = period, flow_regime = 'base', cq = 'none'),
     run_out)
 # apply
 run_out <- rbind(
-    apply_methods(chem_df, q_df, flow_regime = 'base', cq = 'none'),
+    apply_methods(chem_df, q_df, period = period, flow_regime = 'base', cq = 'none'),
     run_out)
 
 ### strong enrich ####
@@ -392,11 +482,11 @@ q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[1]
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[6]], q_df, flow_regime = 'unaltered', cq = 'enrich'),
+    calculate_truth(raw_chem_list = simulated_series[[6]], q_df, period = period, flow_regime = 'unaltered', cq = 'enrich'),
     run_out)
 # apply
 run_out <- rbind(
-    apply_methods(chem_df, q_df, flow_regime = 'unaltered', cq = 'enrich'),
+    apply_methods(chem_df, q_df, period = period, flow_regime = 'unaltered', cq = 'enrich'),
     run_out)
 
 ##### under storm domination ####
@@ -404,11 +494,11 @@ q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[2]
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[6]], q_df, flow_regime = 'storm', cq = 'enrich'),
+    calculate_truth(raw_chem_list = simulated_series[[6]], period = period, q_df, flow_regime = 'storm', cq = 'enrich'),
     run_out)
 # apply
 run_out <- rbind(
-    apply_methods(chem_df, q_df, flow_regime = 'storm', cq = 'enrich'),
+    apply_methods(chem_df, q_df, period = period, flow_regime = 'storm', cq = 'enrich'),
     run_out)
 
 ##### under base domination ####
@@ -416,11 +506,11 @@ q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[3]
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[6]], q_df, flow_regime = 'base', cq = 'enrich'),
+    calculate_truth(raw_chem_list = simulated_series[[6]], q_df, period = period, flow_regime = 'base', cq = 'enrich'),
     run_out)
 # apply
 run_out <- rbind(
-    apply_methods(chem_df, q_df, flow_regime = 'base', cq = 'enrich'),
+    apply_methods(chem_df, q_df, period = period, flow_regime = 'base', cq = 'enrich'),
     run_out)
 
 ### 2 part dilution ####
@@ -434,11 +524,11 @@ q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[1]
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[7]], q_df, flow_regime = 'unaltered', cq = 'broken_dilution'),
+    calculate_truth(raw_chem_list = simulated_series[[7]], period = period, q_df, flow_regime = 'unaltered', cq = 'broken_dilution'),
     run_out)
 # apply
 run_out <- rbind(
-    apply_methods(chem_df, q_df, flow_regime = 'unaltered', cq = 'broken_dilution'),
+    apply_methods(chem_df, q_df, period = period, flow_regime = 'unaltered', cq = 'broken_dilution'),
     run_out)
 
 ##### under storm domination ####
@@ -446,11 +536,11 @@ q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[2]
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[7]], q_df, flow_regime = 'storm', cq = 'broken_dilution'),
+    calculate_truth(raw_chem_list = simulated_series[[7]], period = period, q_df, flow_regime = 'storm', cq = 'broken_dilution'),
     run_out)
 # apply
 run_out <- rbind(
-    apply_methods(chem_df, q_df, flow_regime = 'storm', cq = 'broken_dilution'),
+    apply_methods(chem_df, q_df, period = period, flow_regime = 'storm', cq = 'broken_dilution'),
     run_out)
 
 ##### under base domination ####
@@ -458,11 +548,11 @@ q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[3]
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[7]], q_df, flow_regime = 'base', cq = 'broken_dilution'),
+    calculate_truth(raw_chem_list = simulated_series[[7]], q_df, period = period, flow_regime = 'base', cq = 'broken_dilution'),
     run_out)
 # apply
 run_out <- rbind(
-    apply_methods(chem_df, q_df, flow_regime = 'base', cq = 'broken_dilution'),
+    apply_methods(chem_df, q_df, period = period, flow_regime = 'base', cq = 'broken_dilution'),
     run_out)
 
 ### save out ####
@@ -471,10 +561,27 @@ loop_out <- run_out %>%
         rbind(., loop_out)
 }
 #save(loop_out, file = here('paper','ts simulation', 'biweekly.RData'))
-
+#save(loop_out, file = here('paper','ts simulation', 'monthlyflux_biweeklythinning.RData'))
+#load(file = here('paper','ts simulation', 'biweekly.RData'))
+#load(file = here('paper','ts simulation', 'monthlyflux_biweeklythinning.RData'))
 
 # Figure creation #####
+# this is curently using the save/load objects to run
+# eventually you will need to make this actually run with both
+if(period == 'month'){
+    loop_out_month <- loop_out %>%
+        mutate(runid = paste0(date, '_', runid))
+}
+# join monthly and annual data together
+loop_out <- loop_out_month %>%
+    select(-date)%>%
+    mutate(period = 'Month') %>%
+    rbind(., loop_out %>%
+              mutate(period = 'Year'))
+
 ### make header plots #####
+side_ymin <- 0.01
+side_ymax <- 1000
 # unaltered q plot
 p1 <- ggplot(dn, aes(x = date))+
         geom_line(aes(y = simulated_series[[1]])) +
@@ -484,7 +591,7 @@ p1 <- ggplot(dn, aes(x = date))+
           axis.title.y=element_blank(),
           text = element_text(size = 20))+
     labs(title = 'Unaltered Flow')+
-    scale_y_log10(limits = c(1,1e3))
+    scale_y_log10(limits = c(side_ymin,side_ymax))
 
 p1
 
@@ -497,7 +604,7 @@ p2 <- ggplot(dn, aes(x = date))+
           text = element_text(size = 20))+
     labs(title = 'Stormflow Dominated',
          y = 'Q (lps)')+
-    scale_y_log10(limits = c(1,1e3))
+    scale_y_log10(limits = c(side_ymin,side_ymax))
 p2
 
 # base q plot
@@ -506,20 +613,29 @@ p3 <- ggplot(dn, aes(x = date))+
     theme_classic()+
     theme(axis.title.y=element_blank(),
           axis.title.x = element_blank(),
-          text = element_text(size = 20))+
+          text = element_text(size = 20),
+          axis.text.x = element_text(angle = 45, hjust = 1)
+          )+
     labs(title = 'Baseflow Dominated')+
-    scale_y_log10(limits = c(1,1e3))
+    scale_y_log10(limits = c(side_ymin,side_ymax))+
+    scale_x_continuous(breaks = c(as_date('2015-10-01'), as_date('2016-04-01'), as_date('2016-10-01')),
+                       labels = c('10/2015', '4/2016', '10/2016'))
 
 
 p3
 
+# set common limits to top row graphs
+top_row_breaks <- c(1e-8, 1e-3, 100)
+top_row_ymax <- 1e2
+top_row_ymin <- 1e-8
 # chemo cq
 p4 <- tibble(q = simulated_series[[1]], con = simulated_series[[4]]) %>%
     ggplot(aes(x = q, y = con)) +
     geom_point() +
     theme_classic()+
     scale_x_log10() +
-    scale_y_log10(limits = c(-1e8, 1e2)) +
+    scale_y_log10(limits = c(top_row_ymin, top_row_ymax),
+                  breaks = top_row_breaks) +
     labs(title = 'Chemostatic',
          y = 'C')+
     theme(axis.title.x=element_blank(),
@@ -533,7 +649,8 @@ p5 <- tibble(q = simulated_series[[1]], con = simulated_series[[5]]) %>%
     geom_point() +
     theme_classic()+
     scale_x_log10() +
-    scale_y_log10(limits = c(-1e8, 1e2))+
+    scale_y_log10(limits = c(top_row_ymin, top_row_ymax),
+                  breaks = top_row_breaks)+
     labs(title = 'No Pattern',
          x = 'Q')+
     theme(axis.title.y=element_blank(),
@@ -546,7 +663,8 @@ p6 <- tibble(q = simulated_series[[1]], con = simulated_series[[6]]) %>%
     geom_point() +
     theme_classic()+
     scale_x_log10() +
-    scale_y_log10(limits = c(-1e8, 1e2))+
+    scale_y_log10(limits = c(top_row_ymin, top_row_ymax),
+                  breaks = top_row_breaks)+
     labs(title = 'Enriching',
          x = 'Q')+
     theme(axis.title.y=element_blank(),
@@ -560,7 +678,8 @@ p16 <- tibble(q = simulated_series[[1]], con = simulated_series[[7]]) %>%
     geom_point() +
     theme_classic()+
     scale_x_log10() +
-    scale_y_log10(limits = c(-1e8, 1e2))+
+    scale_y_log10(limits = c(top_row_ymin, top_row_ymax),
+                  breaks = top_row_breaks)+
     labs(title = 'Two-Part Dilution',
          x = 'Q')+
     theme(axis.title.y=element_blank(),
@@ -571,34 +690,64 @@ p16
 # broken dilution c:q
 
 ### make row 1 plots ####
-ymin = 0
-ymax = .85
+ymin = -100
+ymax = 100
 
-ymin_en = 300
-ymax_en = 600
+plot_guts <- function(p){
+    ggplot(p, aes(x = method, y = error))+
+    geom_hline(yintercept = 0)+
+    geom_boxplot(aes(fill = period))+
+    theme_classic()+
+    theme(
+        axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.title.y=element_blank(),
+        text = element_text(size = 20),
+        legend.position="none"
+    )+
+    ylim(ymin, ymax)
+}
+
+transform_loop_out <- function(loop_out){
+    pivot_wider(loop_out, names_from = method, values_from = estimate, id_cols = c(runid, period), values_fn = mean) %>%
+    mutate(pw = ((pw-truth)/truth)*100,
+           beale = ((beale - truth)/truth)*100,
+           rating = ((rating-truth)/truth)*100,
+           composite = ((composite - truth)/truth)*100) %>%
+    select(-truth, -runid) %>%
+    pivot_longer(cols = -period,
+                 #cols = everything() ,
+                 names_to = 'method', values_to = 'error')
+}
+#  spacer plot that is only legend
+p0_data <- loop_out %>%
+    transform_loop_out()
+
+
+p0_data$method <- factor(p0_data$method, levels = c("pw", "beale", "rating", 'composite'))
+
+p0 <-plot_guts(p0_data)+
+    theme(legend.position = 'left',
+          legend.title = element_text(size = 25),
+          legend.text = element_text(size = 20)
+          )+
+    labs(fill = 'Period')
+
+# now extract the legend
+legend <- ggdraw(get_legend(p0))
+
 # unaltered flow w/ chemo data
 p7_data <- loop_out %>%
     filter(flow == 'unaltered',
            cq == 'chemostatic') %>%
-    pivot_wider(names_from = method, values_from = estimate, id_cols = runid, values_fn = mean) %>%
-    # mutate(pw = ((pw-truth)/truth)*100,
-    #        beale = ((beale - truth)/truth)*100,
-    #        rating = ((rating-truth)/truth)*100,
-    #        composite = ((composite - truth)/truth)*100) %>%
-    select(-truth, -runid) %>%
-    pivot_longer(cols = everything() ,names_to = 'method', values_to = 'error')
+    transform_loop_out()
+
 
 p7_data$method <- factor(p7_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
-p7 <- ggplot(p7_data, aes(x = method, y = error)) +
-    geom_hline(yintercept = loop_out$estimate[loop_out$method == 'truth' & loop_out$flow == 'unaltered' & loop_out$cq == 'chemostatic'])+
-        geom_boxplot()+
-    theme_classic()+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank(),
-          axis.title.y=element_blank(),
-          text = element_text(size = 20))+
-    ylim(ymin, ymax)
+p7 <-plot_guts(p7_data)+
+    theme(axis.title.y=element_text(size = 20))+
+    labs(y = " ")
 
 p7
 
@@ -606,78 +755,33 @@ p7
 p8_data <- loop_out %>%
     filter(flow == 'unaltered',
            cq == 'none') %>%
-    pivot_wider(names_from = method, values_from = estimate, id_cols = runid, values_fn = mean) %>%
-    # mutate(pw = ((pw-truth)/truth)*100,
-    #        beale = ((beale - truth)/truth)*100,
-    #        rating = ((rating-truth)/truth)*100,
-    #        composite = ((composite - truth)/truth)*100) %>%
-    select(-truth, -runid) %>%
-    pivot_longer(cols = everything() ,names_to = 'method', values_to = 'error')
+    transform_loop_out()
 
 p8_data$method <- factor(p8_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
-p8 <- ggplot(p8_data, aes(x = method, y = error)) +
-    geom_hline(yintercept = mean(loop_out$estimate[loop_out$method == 'truth' & loop_out$flow == 'unaltered' & loop_out$cq == 'none']))+
-    geom_boxplot()+
-    theme_classic()+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank(),
-          axis.title.y=element_blank(),
-          text = element_text(size = 20))+
-    ylim(ymin, ymax)
+p8 <- plot_guts(p8_data)
 p8
 
 # unaltered flow w/ enrich data
 p9_data <- loop_out %>%
     filter(flow == 'unaltered',
            cq == 'enrich') %>%
-    pivot_wider(names_from = method, values_from = estimate, id_cols = runid, values_fn = mean) %>%
-    # mutate(pw = ((pw-truth)/truth)*100,
-    #        beale = ((beale - truth)/truth)*100,
-    #        rating = ((rating-truth)/truth)*100,
-    #        composite = ((composite - truth)/truth)*100) %>%
-    select(-truth, -runid) %>%
-    pivot_longer(cols = everything() ,names_to = 'method', values_to = 'error')
+    transform_loop_out()
 
 p9_data$method <- factor(p9_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
-p9 <- ggplot(p9_data, aes(x = method, y = error)) +
-    geom_hline(yintercept = mean(loop_out$estimate[loop_out$method == 'truth' & loop_out$flow == 'unaltered' & loop_out$cq == 'enrich']))+
-    geom_boxplot()+
-   # ylim(ymin, ymax)+
-    geom_hline(aes(yintercept=0))+
-    theme_classic()+
-    theme(axis.title.x=element_blank(),
-                          axis.text.x=element_blank(),
-                          axis.title.y = element_blank(),
-          text = element_text(size = 20))+
-    ylim(ymin_en, ymax_en)
+p9 <- plot_guts(p9_data)
 p9
 
 # unaltered flow w/ broken dilution data
 p17_data <- loop_out %>%
     filter(flow == 'unaltered',
            cq == 'broken_dilution') %>%
-    pivot_wider(names_from = method, values_from = estimate, id_cols = runid, values_fn = mean) %>%
-    # mutate(pw = ((pw-truth)/truth)*100,
-    #        beale = ((beale - truth)/truth)*100,
-    #        rating = ((rating-truth)/truth)*100,
-    #        composite = ((composite - truth)/truth)*100) %>%
-    select(-truth, -runid) %>%
-    pivot_longer(cols = everything() ,names_to = 'method', values_to = 'error')
+    transform_loop_out()
 
 p17_data$method <- factor(p17_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
-p17 <- ggplot(p17_data, aes(x = method, y = error)) +
-    geom_hline(yintercept = mean(loop_out$estimate[loop_out$method == 'truth' & loop_out$flow == 'unaltered' & loop_out$cq == 'broken_dilution']))+
-    geom_boxplot()+
-    # ylim(ymin, ymax)+
-    theme_classic()+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank(),
-          axis.title.y = element_blank(),
-          text = element_text(size = 20))#+
-    ylim(ymin_en, ymax_en)
+p17 <- plot_guts(p17_data)
 
 p17
 
@@ -686,50 +790,24 @@ p17
 p10_data <- loop_out %>%
     filter(flow == 'storm',
            cq == 'chemostatic') %>%
-    pivot_wider(names_from = method, values_from = estimate, id_cols = runid, values_fn = mean) %>%
-    # mutate(pw = ((pw-truth)/truth)*100,
-    #        beale = ((beale - truth)/truth)*100,
-    #        rating = ((rating-truth)/truth)*100,
-    #        composite = ((composite - truth)/truth)*100) %>%
-    select(-truth, -runid) %>%
-    pivot_longer(cols = everything() ,names_to = 'method', values_to = 'error')
+    transform_loop_out()
 
 p10_data$method <- factor(p10_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
-p10 <- ggplot(p10_data, aes(x = method, y = error)) +
-    geom_hline(yintercept = mean(loop_out$estimate[loop_out$method == 'truth' & loop_out$flow == 'storm' & loop_out$cq == 'chemostatic']))+
-    geom_boxplot()+
-    theme_classic()+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank(),
-          text = element_text(size = 20))+
-    ylim(ymin,ymax)+
-    labs(y = 'Load (kg/ha/yr)')
+p10 <- plot_guts(p10_data)+
+    theme(axis.title.y=element_text(angle = 90))+
+    labs(y = 'Error (%)')
 p10
 
 # storm flow w/ no pattern data
 p11_data <- loop_out %>%
     filter(flow == 'storm',
            cq == 'none') %>%
-    pivot_wider(names_from = method, values_from = estimate, id_cols = runid, values_fn = mean) %>%
-    # mutate(pw = ((pw-truth)/truth)*100,
-    #        beale = ((beale - truth)/truth)*100,
-    #        rating = ((rating-truth)/truth)*100,
-    #        composite = ((composite - truth)/truth)*100) %>%
-    select(-truth, -runid) %>%
-    pivot_longer(cols = everything() ,names_to = 'method', values_to = 'error')
+    transform_loop_out()
 
 p11_data$method <- factor(p11_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
-p11 <- ggplot(p11_data, aes(x = method, y = error)) +
-    geom_hline(yintercept = mean(loop_out$estimate[loop_out$method == 'truth' & loop_out$flow == 'storm' & loop_out$cq == 'none']))+
-    geom_boxplot()+
-    theme_classic()+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank(),
-          axis.title.y=element_blank(),
-          text = element_text(size = 20))+
-    ylim(ymin, ymax)
+p11 <- plot_guts(p11_data)
 
 p11
 
@@ -737,25 +815,11 @@ p11
 p12_data <- loop_out %>%
     filter(flow == 'storm',
            cq == 'enrich') %>%
-    pivot_wider(names_from = method, values_from = estimate, id_cols = runid, values_fn = mean) %>%
-    # mutate(pw = ((pw-truth)/truth)*100,
-    #        beale = ((beale - truth)/truth)*100,
-    #        rating = ((rating-truth)/truth)*100,
-    #        composite = ((composite - truth)/truth)*100) %>%
-    select(-truth, -runid) %>%
-    pivot_longer(cols = everything() ,names_to = 'method', values_to = 'error')
+    transform_loop_out()
 
 p12_data$method <- factor(p12_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
-p12 <- ggplot(p12_data, aes(x = method, y = error)) +
-    geom_hline(yintercept = mean(loop_out$estimate[loop_out$method == 'truth' & loop_out$flow == 'storm' & loop_out$cq == 'enrich']))+
-    geom_boxplot()+
-    theme_classic()+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank(),
-          axis.title.y=element_blank(),
-          text = element_text(size = 20))+
-    ylim(ymin_en, ymax_en)
+p12 <- plot_guts(p12_data)
 
 p12
 
@@ -763,24 +827,11 @@ p12
 p18_data <- loop_out %>%
     filter(flow == 'storm',
            cq == 'broken_dilution') %>%
-    pivot_wider(names_from = method, values_from = estimate, id_cols = runid, values_fn = mean) %>%
-    # mutate(pw = ((pw-truth)/truth)*100,
-    #        beale = ((beale - truth)/truth)*100,
-    #        rating = ((rating-truth)/truth)*100,
-    #        composite = ((composite - truth)/truth)*100) %>%
-    select(-truth, -runid) %>%
-    pivot_longer(cols = everything() ,names_to = 'method', values_to = 'error')
+    transform_loop_out()
 
 p18_data$method <- factor(p18_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
-p18 <- ggplot(p18_data, aes(x = method, y = error)) +
-    geom_hline(yintercept = mean(loop_out$estimate[loop_out$method == 'truth' & loop_out$flow == 'storm' & loop_out$cq == 'broken_dilution']))+
-    geom_boxplot()+
-    theme_classic()+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank(),
-          axis.title.y=element_blank(),
-          text = element_text(size = 20))
+p18 <- plot_guts(p18_data)
 
 p18
 
@@ -789,77 +840,47 @@ p18
 p13_data <- loop_out %>%
     filter(flow == 'base',
            cq == 'chemostatic') %>%
-    pivot_wider(names_from = method, values_from = estimate, id_cols = runid, values_fn = mean) %>%
-    # mutate(pw = ((pw-truth)/truth)*100,
-    #        beale = ((beale - truth)/truth)*100,
-    #        rating = ((rating-truth)/truth)*100,
-    #        composite = ((composite - truth)/truth)*100) %>%
-    select(-truth, -runid) %>%
-    pivot_longer(cols = everything() ,names_to = 'method', values_to = 'error')
+    transform_loop_out()
 
 p13_data$method <- factor(p13_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
-p13 <- ggplot(p13_data, aes(x = method, y = error)) +
-    geom_hline(yintercept = mean(loop_out$estimate[loop_out$method == 'truth' & loop_out$flow == 'base' & loop_out$cq == 'chemostatic']))+
-    geom_boxplot()+
-    theme_classic()+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank(),
-          axis.title.y=element_blank(),
-          text = element_text(size = 20))+
-    ylim(ymin, ymax)+
-    geom_hline(aes(yintercept=0))
+p13 <- plot_guts(p13_data)+
+    theme(axis.title.y=element_text(size = 20))+
+    labs(y = " ") +
+    theme(axis.title.x=element_text(size = 20),
+          axis.text.x=element_text(angle = 45, vjust = .5))+
+    labs(x = " ")+
+    scale_x_discrete(labels = c('LI', 'Beale', 'Rating', 'Composite'))
 p13
 
 # base flow w/ no pattern data
 p14_data <- loop_out %>%
     filter(flow == 'base',
            cq == 'none') %>%
-    pivot_wider(names_from = method, values_from = estimate, id_cols = runid, values_fn = mean) %>%
-    # mutate(pw = ((pw-truth)/truth)*100,
-    #        beale = ((beale - truth)/truth)*100,
-    #        rating = ((rating-truth)/truth)*100,
-    #        composite = ((composite - truth)/truth)*100) %>%
-    select(-truth, -runid) %>%
-    pivot_longer(cols = everything() ,names_to = 'method', values_to = 'error')
+    transform_loop_out()
 
 p14_data$method <- factor(p14_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
-p14 <- ggplot(p14_data, aes(x = method, y = error)) +
-    geom_hline(yintercept = mean(loop_out$estimate[loop_out$method == 'truth' & loop_out$flow == 'base' & loop_out$cq == 'none']))+
-    geom_boxplot()+
-    theme_classic() +
-    ylim(ymin, ymax)+
-    theme(axis.title.y=element_blank(),
-          text = element_text(size = 20)) +
-    labs(x = 'Method')
+p14 <- plot_guts(p14_data) +
+    theme(axis.title.x=element_text(size = 20),
+          axis.text.x=element_text(angle = 45, vjust = .5))+
+    labs(x = 'Method') +
+    scale_x_discrete(labels = c('LI', 'Beale', 'Rating', 'Composite'))
 p14
 
 # base flow w/ enrich data
 p15_data <- loop_out %>%
     filter(flow == 'base',
            cq == 'enrich') %>%
-    pivot_wider(names_from = method, values_from = estimate, id_cols = runid, values_fn = mean) %>%
-    # mutate(pw = ((pw-truth)/truth)*100,
-    #        beale = ((beale - truth)/truth)*100,
-    #        rating = ((rating-truth)/truth)*100,
-    #        composite = ((composite - truth)/truth)*100) %>%
-    select(-truth, -runid) %>%
-    pivot_longer(cols = everything() ,names_to = 'method', values_to = 'error')
+    transform_loop_out()
 
 p15_data$method <- factor(p15_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
-p15 <- ggplot(p15_data, aes(x = method, y = error)) +
-    geom_hline(yintercept = mean(loop_out$estimate[loop_out$method == 'truth' & loop_out$flow == 'base' & loop_out$cq == 'enrich']))+
-    geom_boxplot()+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank())+
-    theme_classic()+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank(),
-          axis.title.y=element_blank(),
-          text = element_text(size = 20))+
-    ylim(ymin_en, ymax_en)
+p15 <- plot_guts(p15_data) +
+    theme(axis.title.x=element_text(size = 20),
+          axis.text.x=element_text(angle = 45, vjust = .5))+
+    labs(x = " ")+
+    scale_x_discrete(labels = c('LI', 'Beale', 'Rating', 'Composite'))
 
 p15
 
@@ -867,32 +888,22 @@ p15
 p19_data <- loop_out %>%
     filter(flow == 'base',
            cq == 'broken_dilution') %>%
-    pivot_wider(names_from = method, values_from = estimate, id_cols = runid, values_fn = mean) %>%
-    # mutate(pw = ((pw-truth)/truth)*100,
-    #        beale = ((beale - truth)/truth)*100,
-    #        rating = ((rating-truth)/truth)*100,
-    #        composite = ((composite - truth)/truth)*100) %>%
-    select(-truth, -runid) %>%
-    pivot_longer(cols = everything() ,names_to = 'method', values_to = 'error')
+    transform_loop_out()
 
 p19_data$method <- factor(p15_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
-p19 <- ggplot(p19_data, aes(x = method, y = error)) +
-    geom_hline(yintercept = mean(loop_out$estimate[loop_out$method == 'truth' & loop_out$flow == 'base' & loop_out$cq == 'broken_dilution']))+
-    geom_boxplot()+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank())+
-    theme_classic()+
-    theme(axis.title.x=element_blank(),
-          axis.text.x=element_blank(),
-          axis.title.y=element_blank(),
-          text = element_text(size = 20))
+p19 <- plot_guts(p19_data) +
+    theme(axis.title.x=element_text(size = 20),
+          axis.text.x=element_text(angle = 45, vjust = .5))+
+    labs(x = " ")+
+    scale_x_discrete(labels = c('LI', 'Beale', 'Rating', 'Composite'))
 
 p19
 
 ## make mega fig ####
-(plot_spacer() | p4 | p5 | p6 | p16)/
-(p1 | p7 | p8 | p9 | p17)/
-(p2 | p10 | p11 | p12 | p18)/
-(p3 | p13 | p14 | p15 | p19)
+(legend+ theme(plot.margin = unit(c(0,30,0,0), "pt")) | p4 | p5 | p6 | p16)/
+(p1+ theme(plot.margin = unit(c(0,30,0,0), "pt")) | p7 | p8 | p9 | p17)/
+(p2+ theme(plot.margin = unit(c(0,30,0,0), "pt")) | p10 | p11 | p12 | p18)/
+(p3+ theme(plot.margin = unit(c(0,30,0,0), "pt")) | p13 | p14 | p15 | p19)
 
+ggsave(filename = here('paper','ts simulation', 'pop.png'), width = 18, height = 9)

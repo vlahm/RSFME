@@ -155,11 +155,11 @@ ggplot(., aes(x = hours, y = median))+
     geom_ribbon(aes(ymin = min, ymax = max), alpha = .2 )+
     facet_wrap(vars(method), ncol = 1)+
     #scale_y_reverse(limits = c(100,0)) +
-    labs(x = 'Frequency (hours)',
-         y = 'Estimate (kg/hr/yr)',
-         caption = '15 minute NO3 data from HBEF W3 2016 WY resampled by every nth measurement, compared to truth using every sample and the composite method.
-         \n Vertical lines indicate hourly, daily, weekly, biweekly, monthly, and bimonthly intervals.
-         \n Black line is the median prediction and grey area the range of possible predictions.')+
+    labs(x = 'Frequency (hours)'#,
+         # y = 'Estimate (kg/hr/yr)',
+         # caption = '15 minute NO3 data from HBEF W3 2016 WY resampled by every nth measurement, compared to truth using every sample and the composite method.
+         # \n Vertical bars indicate hourly, daily, weekly, biweekly, monthly, and bimonthly intervals, black line is the median prediction and grey area the range of possible predictions.'
+         )+
     theme_classic()+
     theme(text = element_text(size = 20))+
     geom_vline(xintercept = 1)+ #hourly
