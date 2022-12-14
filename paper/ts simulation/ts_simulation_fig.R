@@ -17,15 +17,17 @@ set.seed(53045)
 source(here('source/flux_methods.R'))
 
 thin_freq <- 'biweekly'
+#thin_freq <- 'weekly'
 #thin_freq <- 'monthly'
-period <- 'month'
-reps = 100
+#period <- 'month'
+period <- 'annual'
+reps = 10
 
 
 area <- 42.4
 site_code = 'w3'
 # loop start #####
-if(is.null(period) | period == 'annual'){
+if(period == 'annual'){
 loop_out <- tibble(method = as.character(), estimate = as.numeric(),
                   flow = as.character(), cq = as.character(), runid = as.integer())
 }
@@ -149,75 +151,124 @@ simulated_series[[3]] <- simulated_series[[3]]*hold_factor
 
 ### chemostatic #####
 # make random sampling function
-rtnorm <- function(n, mean, sd, a = 0, b = max(dn$IS_NO3)){
+rtnorm <- function(n, mean, sd, a = 0, b = 5){
     qnorm(runif(n, pnorm(a, mean, sd), pnorm(b, mean, sd)), mean, sd)
 }
 #### apply to make chemo #####
-simulated_series[[4]] <- rtnorm(n = nrow(dn), sd = (sd(dn$IS_NO3)/4), mean = mean(dn$IS_NO3))
+#simulated_series[[4]] <- rtnorm(n = nrow(dn), sd = (sd(dn$IS_NO3)), mean = mean(dn$IS_NO3))
+simulated_series[[4]] <- rtnorm(n = nrow(dn), sd = 0.1, mean = 2)
+plot(log10(simulated_series[[4]])~log10(simulated_series[[1]]))
 #lines(dn$datetime, simulated_series[[4]], col = 'blue', type = 'l')
 
 ### no pattern ####
 # apply to make no pattern ts
-simulated_series[[5]] <- rtnorm(n = nrow(dn), sd = sd(dn$IS_NO3), mean = mean(dn$IS_NO3))
+simulated_series[[5]] <- rtnorm(n = nrow(dn), sd = 0.5, mean = 2)
+plot(log10(simulated_series[[5]])~log10(simulated_series[[1]]))
 #lines(dn$datetime, simulated_series[[4]], col = 'blue', type = 'l')
 
 # plot(simulated_series[[5]]~dn$IS_discharge, data = dn)
 
 #### enriching ####
 ##### fit lm to sp ts ####
-fit_fdom <- lm(log10(dn$IS_FDOM)~log10(dn$IS_discharge), data = dn)
-inter_range <- runif(1000, min = confint(fit_fdom)[1,1], max = confint(fit_fdom)[1,2])
-coef_range <- runif(1000, min = confint(fit_fdom)[2,1], max = confint(fit_fdom)[2,2])
-error_range <- rnorm(1000, mean = 0, sd = sd(dn$IS_FDOM)/2)
-simulated_series[[6]] <- as.numeric()
-##### for all #####
-for(j in 1:length(simulated_series[[1]])){
-    inter <- sample(inter_range, size = 1)
-    slope <- sample(coef_range, size = 1)
-    error <- sample(error_range, size = 1)
-    q <- simulated_series[[1]][j]
+## commenting out fdom based values in favor of fully synthetic
+# fit_fdom <- lm(log10(dn$IS_FDOM)~log10(dn$IS_discharge), data = dn)
+# inter_range <- runif(1000, min = confint(fit_fdom)[1,1], max = confint(fit_fdom)[1,2])
+# coef_range <- runif(1000, min = confint(fit_fdom)[2,1], max = confint(fit_fdom)[2,2])
+# error_range <- rnorm(1000, mean = 0, sd = sd(dn$IS_FDOM)/2)
+# simulated_series[[6]] <- as.numeric()
+# ##### for all #####
+# for(j in 1:length(simulated_series[[1]])){
+#     inter <- sample(inter_range, size = 1)
+#     slope <- sample(coef_range, size = 1)
+#     error <- sample(error_range, size = 1)
+#     q <- simulated_series[[1]][j]
+#
+#     pre_error_val <- 10^((log10(q)*slope)+inter)
+#
+#     eps <- pre_error_val+(error*(pre_error_val)/mean(dn$IS_FDOM))
+#
+#     simulated_series[[6]][j] <- pre_error_val + eps
+#
+# }
+## fully synthetic effort
+error_vec <- rnorm(length(simulated_series[[1]]), mean = 1, sd = 0.05)
+simulated_series[[6]] <- (10^((log10(simulated_series[[1]])*1)+1))*error_vec
+plot(log10(simulated_series[[6]])~log10(simulated_series[[1]]))
 
-    pre_error_val <- 10^((log10(q)*slope)+inter)
-
-    eps <- pre_error_val+(error*(pre_error_val)/mean(dn$IS_FDOM))
-
-    simulated_series[[6]][j] <- pre_error_val + eps
-
-}
-
+summary(lm(log10(simulated_series[[6]])~log10(simulated_series[[1]])))
 #### two part dilution ####
-##### fit lm to sp ts ####
-fit_cond <- lm(log10(dn$IS_spCond*0.06)~log10(dn$IS_discharge), data = dn)
-inter_range <- runif(1000, min = confint(fit_cond)[1,1], max = confint(fit_cond)[1,2])
-coef_range <- runif(1000, min = confint(fit_cond)[2,1], max = confint(fit_cond)[2,2])
-error_range <- rnorm(1000, mean = 0, sd = sd(dn$IS_spCond)/2)
-simulated_series[[7]] <- as.numeric()
-##### for all #####
+## fully synthetic effort
+error_vec <- rnorm(length(simulated_series[[1]]), mean = 1, sd = 0.05)
+mild <- (10^((log10(simulated_series[[1]])*-0.1))+3)*error_vec
+mean(mild)
+simple <- (10^((log10(simulated_series[[1]])*-1)+2))*error_vec
+mean(simple)
+min(simple)
+tibble(q = log10(simulated_series[[1]]),
+       mild = log10(mild),
+       heavy = log10(simple)) %>%
+ggplot(.,aes(x = q))+
+    geom_point(aes(y = mild))+
+    geom_point(aes(y = heavy), color = 'red')
+
+simulated_series[[7]]<-simulated_series[[1]]
+low_thresh <- 1.45
+high_thresh <- 1.47
 for(j in 1:length(simulated_series[[1]])){
-    inter <- sample(inter_range, size = 1)
-    slope <- sample(coef_range, size = 1)
-    error <- sample(error_range, size = 1)
-    q <- simulated_series[[1]][j]
 
-    if(q <= 5){
-    pre_error_val <- 10^((log10(q)*slope)+inter)
+q <- log10(simulated_series[[1]][j])
+if(q < low_thresh){simulated_series[[7]][j] <- mild[j]}
 
-    eps <- pre_error_val+(error*(pre_error_val)/mean(dn$IS_spCond))
+if(q > high_thresh){simulated_series[[7]][j] <- simple[j]}
 
-    simulated_series[[7]][j] <- pre_error_val + eps
-    }
-    if(q > 5){
-        pre_error_val <- 10^((log10(q)*2*slope)+inter)
-
-        eps <- pre_error_val+(error*(pre_error_val)/mean(dn$IS_spCond))
-
-        simulated_series[[7]][j] <- pre_error_val + eps
-    }
+if(q >= low_thresh &
+   q <= high_thresh){
+    choice <- sample(0:1, 1)
+    if(choice == 0){simulated_series[[7]][j] <- mild[j]}
+    if(choice == 1){simulated_series[[7]][j] <- simple[j]}
+}
 
 }
+
+plot(log10(simulated_series[[7]])~log10(simulated_series[[1]]))
+summary(lm(log10(simulated_series[[6]])~log10(simulated_series[[1]])))
+
+
+# shelving this in favor of fully synthetic effort
+# ##### fit lm to sp ts ####
+# fit_cond <- lm(log10(dn$IS_spCond*0.06)~log10(dn$IS_discharge), data = dn)
+# inter_range <- runif(1000, min = confint(fit_cond)[1,1], max = confint(fit_cond)[1,2])
+# coef_range <- runif(1000, min = confint(fit_cond)[2,1], max = confint(fit_cond)[2,2])
+# error_range <- rnorm(1000, mean = 0, sd = sd(dn$IS_spCond)/2)
+# simulated_series[[7]] <- as.numeric()
+# ##### for all #####
+# for(j in 1:length(simulated_series[[1]])){
+#     inter <- sample(inter_range, size = 1)
+#     slope <- sample(coef_range, size = 1)
+#     error <- sample(error_range, size = 1)
+#     q <- simulated_series[[1]][j]
+#
+#     if(q <= 5){
+#     pre_error_val <- 10^((log10(q)*slope)+inter)
+#
+#     eps <- pre_error_val+(error*(pre_error_val)/mean(dn$IS_spCond))
+#
+#     simulated_series[[7]][j] <- pre_error_val + eps
+#     }
+#     if(q > 5){
+#         pre_error_val <- 10^((log10(q)*2*slope)+inter)
+#
+#         eps <- pre_error_val+(error*(pre_error_val)/mean(dn$IS_spCond))
+#
+#         simulated_series[[7]][j] <- pre_error_val + eps
+#     }
+#
+# }
+
+
 #plot(log10(dn$IS_FDOM)~log10(dn$IS_discharge), data = dn)
 
-# check c:q
+## check c:q #####
 #plot(log10(simulated_series[[6]])~log10(simulated_series[[1]]))
 #summary(lm(log10(simulated_series[[6]])~log10(simulated_series[[1]])))
 #
@@ -227,8 +278,21 @@ for(j in 1:length(simulated_series[[1]])){
 # plot(log10(simulated_series[[6]])~log10(simulated_series[[3]]))
 # summary(lm(log10(simulated_series[[6]])~log10(simulated_series[[3]])))
 
-# ESTIMATE FLUX#####
+# ESTIMATE FLUX #####
 # coarsen function
+if(thin_freq == 'weekly'){
+    coarsen_data <- function(chem_df){
+        out <- chem_df %>%
+            filter(hour(datetime) %in% c(13:18)) %>%
+            filter(lubridate::mday(datetime) %in% c(1, 8, 15, 23)) %>%
+            mutate(date = lubridate::date(datetime)) %>%
+            distinct(date, .keep_all = T)
+        return(out)
+    }
+}
+
+
+
 if(thin_freq == 'biweekly'){
 coarsen_data <- function(chem_df){
 out <- chem_df %>%
@@ -252,6 +316,7 @@ if(thin_freq == 'monthly'){
 }
 
 
+
 make_q_daily <- function(q_df){
 out <- q_df %>%
     group_by(lubridate::yday(datetime)) %>%
@@ -263,7 +328,7 @@ out <- q_df %>%
 }
 
 calculate_truth <- function(raw_chem_list, q_df, period = period, flow_regime = NULL, cq = NULL){
-    if(is.null(period) | period == 'annual'){
+    if(period == 'annual'){
     chem_df <- tibble(datetime = dn$datetime, con = raw_chem_list) %>%
         group_by(lubridate::yday(datetime)) %>%
         summarize(date = date(datetime),
@@ -318,7 +383,7 @@ calculate_truth <- function(raw_chem_list, q_df, period = period, flow_regime = 
 }
 
 apply_methods <- function(chem_df, q_df, period = period, flow_regime = NULL, cq = NULL){
-    if(is.null(period) | period == 'annual'){
+    if(period == 'annual'){
     out <- tibble(method = as.character(), estimate = as.numeric(),
                   flow = as.character(), cq = as.character())
     #pw
@@ -379,7 +444,7 @@ apply_methods <- function(chem_df, q_df, period = period, flow_regime = NULL, cq
 
 
 }
-if(is.null(period) | period == 'annual'){
+if(period == 'annual'){
 run_out <- tibble(method = as.character(), estimate = as.numeric(),
                   flow = as.character(), cq = as.character())
 }
@@ -572,12 +637,12 @@ if(period == 'month'){
     loop_out_month <- loop_out %>%
         mutate(runid = paste0(date, '_', runid))
 }
-# join monthly and annual data together
-loop_out <- loop_out_month %>%
-    select(-date)%>%
-    mutate(period = 'Month') %>%
-    rbind(., loop_out %>%
-              mutate(period = 'Year'))
+# # join monthly and annual data together
+# loop_out <- loop_out_month %>%
+#     select(-date)%>%
+#     mutate(period = 'Month') %>%
+#     rbind(., loop_out %>%
+#               mutate(period = 'Year'))
 
 ### make header plots #####
 side_ymin <- 0.01
@@ -625,9 +690,10 @@ p3 <- ggplot(dn, aes(x = date))+
 p3
 
 # set common limits to top row graphs
-top_row_breaks <- c(1e-8, 1e-3, 100)
-top_row_ymax <- 1e2
-top_row_ymin <- 1e-8
+top_row_breaks <- c(1e-2, 1, 1e2, 1e4)
+top_row_labels <- c('0.01', '1', '100', '10,000')
+top_row_ymax <- 1e4
+top_row_ymin <- 1e-2
 # chemo cq
 p4 <- tibble(q = simulated_series[[1]], con = simulated_series[[4]]) %>%
     ggplot(aes(x = q, y = con)) +
@@ -635,9 +701,10 @@ p4 <- tibble(q = simulated_series[[1]], con = simulated_series[[4]]) %>%
     theme_classic()+
     scale_x_log10() +
     scale_y_log10(limits = c(top_row_ymin, top_row_ymax),
-                  breaks = top_row_breaks) +
+                  breaks = top_row_breaks,
+                  labels = top_row_labels) +
     labs(title = 'Chemostatic',
-         y = 'C')+
+         y = 'C (mg/L)')+
     theme(axis.title.x=element_blank(),
           text = element_text(size = 20))
 
@@ -652,7 +719,7 @@ p5 <- tibble(q = simulated_series[[1]], con = simulated_series[[5]]) %>%
     scale_y_log10(limits = c(top_row_ymin, top_row_ymax),
                   breaks = top_row_breaks)+
     labs(title = 'No Pattern',
-         x = 'Q')+
+         x = 'Q (lps)')+
     theme(axis.title.y=element_blank(),
           text = element_text(size = 20))
 p5
@@ -696,7 +763,9 @@ ymax = 100
 plot_guts <- function(p){
     ggplot(p, aes(x = method, y = error))+
     geom_hline(yintercept = 0)+
-    geom_boxplot(aes(fill = period))+
+    geom_boxplot(
+        #aes(fill = period)
+                 )+
     theme_classic()+
     theme(
         axis.title.x=element_blank(),
@@ -709,13 +778,16 @@ plot_guts <- function(p){
 }
 
 transform_loop_out <- function(loop_out){
-    pivot_wider(loop_out, names_from = method, values_from = estimate, id_cols = c(runid, period), values_fn = mean) %>%
+    pivot_wider(loop_out, names_from = method, values_from = estimate,
+                #id_cols = c(runid, period),
+                id_cols = c(runid, thin_freq),
+                values_fn = mean) %>%
     mutate(pw = ((pw-truth)/truth)*100,
            beale = ((beale - truth)/truth)*100,
            rating = ((rating-truth)/truth)*100,
            composite = ((composite - truth)/truth)*100) %>%
     select(-truth, -runid) %>%
-    pivot_longer(cols = -period,
+    pivot_longer(cols = -thin_freq,
                  #cols = everything() ,
                  names_to = 'method', values_to = 'error')
 }
@@ -731,7 +803,7 @@ p0 <-plot_guts(p0_data)+
           legend.title = element_text(size = 25),
           legend.text = element_text(size = 20)
           )+
-    labs(fill = 'Period')
+    labs(fill = 'Frequency')
 
 # now extract the legend
 legend <- ggdraw(get_legend(p0))
@@ -906,4 +978,4 @@ p19
 (p2+ theme(plot.margin = unit(c(0,30,0,0), "pt")) | p10 | p11 | p12 | p18)/
 (p3+ theme(plot.margin = unit(c(0,30,0,0), "pt")) | p13 | p14 | p15 | p19)
 
-ggsave(filename = here('paper','ts simulation', 'pop.png'), width = 18, height = 9)
+#ggsave(filename = here('paper','ts simulation', 'pop.png'), width = 18, height = 9)

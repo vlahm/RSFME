@@ -16,6 +16,7 @@ source(here('source/flux_methods.R'))
 
 area <- 42.4
 site_code = 'w3'
+target_solute = 'IS_spCond'
 
 # read in data ####
 d <- read_feather('C:/Users/gubbi/desktop/w3_sensor_wdisch.feather') %>%
@@ -29,11 +30,16 @@ dn <- d %>%
     mutate(IS_discharge = na.approx(IS_discharge),
            IS_NO3 = na.approx(IS_NO3),
            IS_FDOM = na.approx(IS_FDOM),
-           IS_spCond = na.approx(IS_spCond))
+           IS_spCond = na.approx(IS_spCond)) %>%
+    select(date, all_of(target_solute), IS_discharge)
+colnames(dn)[2] <- 'con'
+
+if(target_solute == 'IS_spCond'){
+    dn$con <- dn$con*0.06284158
+}
 
 # calculate truth ####
 chem_df <- dn %>%
-    select(date, con = IS_NO3) %>%
     group_by(lubridate::yday(date)) %>%
     summarize(date = date(date),
               con = mean(con)) %>%
@@ -74,8 +80,8 @@ n = i
     for(j in 1:reps){
     loopid <- loopid+1
     start_pos <- sample(1:n, size = 1)
-    coarse_chem[[loopid]] <- tibble(date =  nth_element(dn$datetime, 1, n = start_pos),
-                                    con = nth_element(dn$IS_NO3, 1, n = start_pos))
+    coarse_chem[[loopid]] <- tibble(date =  nth_element(dn$date, 1, n = start_pos),
+                                    con = nth_element(dn$con, 1, n = start_pos))
     names(coarse_chem)[loopid] <- paste0('sample_',n)
     }
 }
@@ -87,30 +93,30 @@ n = i
 apply_methods_coarse <- function(chem_df, q_df){
     n = nrow(chem_df)
 
-    out <- tibble(method = as.character(), estimate = as.numeric(), se)
+    out <- tibble(method = as.character(), estimate = as.numeric())#, se)
     #pw
     out[1,2] <- calculate_pw(chem_df, q_df)
-    theta <- function(x, chem_df, q_df){calculate_pw(chem_df[x,], q_df, datecol = 'datetime') }
-    out_jack[1,3] <- jackknife(1:n,theta, chem_df, q_df)$jack.se
+    # theta <- function(x, chem_df, q_df){calculate_pw(chem_df[x,], q_df, datecol = 'datetime') }
+    # out_jack[1,3] <- jackknife(1:n,theta, chem_df, q_df)$jack.se
     #beale
     out[2,2] <- calculate_beale(chem_df, q_df)
-    theta <- function(x, chem_df, q_df){calculate_beale(chem_df[x,], q_df, datecol = 'datetime') }
-    out_jack[2,3] <- jackknife(1:n,theta, chem_df, q_df)$jack.se
+    # theta <- function(x, chem_df, q_df){calculate_beale(chem_df[x,], q_df, datecol = 'datetime') }
+    # out_jack[2,3] <- jackknife(1:n,theta, chem_df, q_df)$jack.se
     #rating
     out[3,2] <- calculate_rating(chem_df, q_df)
-    theta <- function(x, chem_df, q_df){calculate_rating(chem_df[x,], q_df, datecol = 'datetime') }
-    out_jack[3,3] <- jackknife(1:n,theta, chem_df, q_df)$jack.se
+    # theta <- function(x, chem_df, q_df){calculate_rating(chem_df[x,], q_df, datecol = 'datetime') }
+    # out_jack[3,3] <- jackknife(1:n,theta, chem_df, q_df)$jack.se
     #comp
     out[4,2] <- generate_residual_corrected_con(chem_df = chem_df, q_df = q_df, sitecol = 'site_code') %>%
         rename(datetime = date) %>%
         calculate_composite_from_rating_filled_df() %>%
         pull(flux)
 
-    theta <- function(x, chem_df, q_df){generate_residual_corrected_con(chem_df = chem_df[x,], q_df = q_df, sitecol = 'site_code') %>%
-            rename(datetime = date) %>%
-            calculate_composite_from_rating_filled_df() %>%
-            pull(flux) }
-    out_jack[4,3] <- jackknife(1:n,theta, chem_df, q_df)$jack.se
+    # theta <- function(x, chem_df, q_df){generate_residual_corrected_con(chem_df = chem_df[x,], q_df = q_df, sitecol = 'site_code') %>%
+    #         rename(datetime = date) %>%
+    #         calculate_composite_from_rating_filled_df() %>%
+    #         pull(flux) }
+    # out_jack[4,3] <- jackknife(1:n,theta, chem_df, q_df)$jack.se
 
     out$method <- c('pw', 'beale', 'rating', 'composite')
     return(out)
@@ -135,7 +141,10 @@ for(i in 2:length(coarse_chem)){
         mutate(n = n) %>%
         rbind(., out_tbl)
 }
-load('paper/coarsen plot/100repswithbootstrap_v2.RData')
+# save/load data from previous runs #####
+
+#load('paper/coarsen plot/100repswithbootstrap_v2.RData')
+#save(out_tbl, file = here('paper','coarsen plot', '100reps_annual_Ca.RData'))
 
 plot_tbl <- out_tbl %>%
     unique() %>%
@@ -145,33 +154,71 @@ plot_tbl <- out_tbl %>%
            percent_coverage = (nrow(dn)/n)/nrow(dn),
            hours = n/4)
 
+method_names <- c(
+    `pw` = "Linear Interpolation",
+    `beale` = "Beale",
+    `rating` = "Rating",
+    `composite` = "Composite"
+)
+
+breaks <- c(1,24,96,192,384,768)
+
+x_labels <- c('Hourly', 'Daily', 'Weekly', 'Biweekly', 'Monthly', 'Bimonthly')
+
+if(target_solute == 'IS_NO3'){
+    y_min = -100
+    y_max = 150
+}
+if(target_solute == ('IS_spCond')){
+    y_min = -100
+    y_max = 100
+}
+
 plot_tbl %>%
     group_by(method, hours) %>%
-    mutate(min = min(estimate), max = max(estimate), median = median(estimate)) %>%
+    mutate(min = min(error), max = max(error), median = median(error)) %>%
+    filter(hours <= 899) %>%
 ggplot(., aes(x = hours, y = median))+
-    geom_hline(yintercept = truth$estimate[1])+
-    geom_line()+
+    annotate('rect', xmin = -Inf, xmax = Inf,
+             ymin = -5, ymax = 5, fill = 'green', alpha = .1)+
+    annotate('rect', xmin = -Inf, xmax = Inf,
+             ymin = -20, ymax = -5, fill = 'yellow', alpha = .1)+
+    annotate('rect', xmin = -Inf, xmax = Inf,
+             ymin = 5, ymax = 20, fill = 'yellow', alpha = .1)+
+    annotate('rect', xmin = -Inf, xmax = Inf,
+             ymin = 20, ymax = Inf, fill = 'red', alpha = .1)+
+    annotate('rect', xmin = -Inf, xmax = Inf,
+             ymin = -Inf, ymax = -20, fill = 'red', alpha = .1)+
+    geom_hline(yintercept = 0)+
+    geom_line(size = 1)+
+    geom_line(aes(y = max))+
+    geom_line(aes(y = min))+
     #geom_point()+
     geom_ribbon(aes(ymin = min, ymax = max), alpha = .2 )+
-    facet_wrap(vars(method), ncol = 1)+
+    facet_wrap(vars(method), ncol = 2, labeller = as_labeller(method_names))+
     #scale_y_reverse(limits = c(100,0)) +
-    labs(x = 'Frequency (hours)'#,
+    labs(x = 'Frequency',
+         y = 'Error (%)'
          # y = 'Estimate (kg/hr/yr)',
          # caption = '15 minute NO3 data from HBEF W3 2016 WY resampled by every nth measurement, compared to truth using every sample and the composite method.
          # \n Vertical bars indicate hourly, daily, weekly, biweekly, monthly, and bimonthly intervals, black line is the median prediction and grey area the range of possible predictions.'
          )+
     theme_classic()+
-    theme(text = element_text(size = 20))+
+    scale_x_continuous(breaks = breaks, labels = x_labels#, guide = guide_axis(n.dodge=2)
+                       )+
+    scale_y_continuous(limits = c(y_min, y_max))+
+    theme(text = element_text(size = 20),
+          axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1, size = 10),
+          panel.spacing = unit(.25,'lines'))+
     geom_vline(xintercept = 1)+ #hourly
     geom_vline(xintercept = 24)+ #daily
     geom_vline(xintercept = 96)+ #weekly
     geom_vline(xintercept = 192)+ #biweekly
     geom_vline(xintercept = 384)+ #monthly
-    geom_vline(xintercept = 768)+ #bimonthly
-    annotate('rect', xmin = 0, xmax = 1600,
-             ymin = truth$estimate[1]*.95, ymax = truth$estimate[1]*1.05, fill = 'green', alpha = .1)
+    geom_vline(xintercept = 768) #bimonthly
 
-
+#ggsave(filename = here('paper','coarsen plot', 'nitrate_annual.png'), width = 14, height = 6)
+#ggsave(filename = here('paper','coarsen plot', 'ca_annual.png'), width = 14, height = 6)
 
 
 
