@@ -1,0 +1,22 @@
+hjandrews annual flux log
+time: 2022-12-15 20:37:02 America/New_York
+date:2022-12-15
+-- GSWS03
+-- STEP_1: read in site info and all chem and discharge data
+---- NA
+---- STEP_2: solute data prep
+---- NA timestamp 
+----     time: 2022-12-15 20:37:03 America/New_York
+date:2022-12-15
+---- STEP_2_ERROR: solute failed to read in default unit
+
+---- STEP_2: solute data prep
+
+----     time: 2022-12-15 20:37:03 America/New_York
+date:2022-12-15
+-- STEP_8: GSWS03 flux attempting write
+-- STEP_8_SUCCESS: GSWS03 flux written to file
+-- STEP_8_ERROR: GSWS03 flux failed to write to file
+STEP_8: GSWS03 annual flux
+end, time: 2022-12-15 20:37:46 America/New_York
+date:2022-12-15

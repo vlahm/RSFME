@@ -1,0 +1,185 @@
+east_river annual flux log
+time: 2022-12-12 11:52:45 America/New_York
+date:2022-12-12
+-- Quigley
+-- STEP_1: read in site info and all chem and discharge data
+---- GN_Ag
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Al
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_As
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_B
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Ba
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Be
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Ca
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Cd
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Cl
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Co
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Cr
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Cs
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Cu
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_DIC
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_DOC
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Eu
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_F
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Fe
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Ge
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_K
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Li
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Mg
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Mn
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Mo
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Na
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Ni
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_NO3_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_P
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Pb
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_PO4_P
+---- STEP_2: solute data prep
+---- STEP_2_ERROR: solute failed to read in data
+---- GN_Rb
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Sb
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Se
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Si
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Sn
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_SO4_S
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Sr
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_TDN
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Th
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Ti
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_U
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_V
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Zn
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Zr
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+-- STEP_8: Quigley flux attempting write
+-- STEP_8_SUCCESS: Quigley flux written to file
+STEP_8: Quigley annual flux
+end, time: 2022-12-12 11:52:48 America/New_York
+date:2022-12-12

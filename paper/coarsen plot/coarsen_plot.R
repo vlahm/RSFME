@@ -16,6 +16,7 @@ source(here('source/flux_methods.R'))
 
 area <- 42.4
 site_code = 'w3'
+#target_solute = 'IS_NO3'
 target_solute = 'IS_spCond'
 
 # read in data ####
@@ -145,6 +146,8 @@ for(i in 2:length(coarse_chem)){
 
 #load('paper/coarsen plot/100repswithbootstrap_v2.RData')
 #save(out_tbl, file = here('paper','coarsen plot', '100reps_annual_Ca.RData'))
+load(file = here('paper','coarsen plot', '100reps_annual_Ca.RData'))
+
 
 plot_tbl <- out_tbl %>%
     unique() %>%
@@ -170,8 +173,8 @@ if(target_solute == 'IS_NO3'){
     y_max = 150
 }
 if(target_solute == ('IS_spCond')){
-    y_min = -100
-    y_max = 100
+    y_min = -20
+    y_max = 20
 }
 
 plot_tbl %>%
@@ -191,10 +194,10 @@ ggplot(., aes(x = hours, y = median))+
              ymin = -Inf, ymax = -20, fill = 'red', alpha = .1)+
     geom_hline(yintercept = 0)+
     geom_line(size = 1)+
-    geom_line(aes(y = max))+
-    geom_line(aes(y = min))+
+    geom_line(aes(y = max), linetype = 'dashed', size = .75)+
+    geom_line(aes(y = min), linetype = 'dashed', size = .75)+
     #geom_point()+
-    geom_ribbon(aes(ymin = min, ymax = max), alpha = .2 )+
+    #geom_ribbon(aes(ymin = min, ymax = max), alpha = .2 )+
     facet_wrap(vars(method), ncol = 2, labeller = as_labeller(method_names))+
     #scale_y_reverse(limits = c(100,0)) +
     labs(x = 'Frequency',
@@ -204,19 +207,19 @@ ggplot(., aes(x = hours, y = median))+
          # \n Vertical bars indicate hourly, daily, weekly, biweekly, monthly, and bimonthly intervals, black line is the median prediction and grey area the range of possible predictions.'
          )+
     theme_classic()+
-    scale_x_continuous(breaks = breaks, labels = x_labels#, guide = guide_axis(n.dodge=2)
+    scale_x_continuous(breaks = breaks, labels = x_labels,guide = guide_axis(check.overlap = TRUE)
                        )+
     scale_y_continuous(limits = c(y_min, y_max))+
     theme(text = element_text(size = 20),
-          axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1, size = 10),
+          axis.text.x = element_text(angle = 45, vjust = 1, hjust = 1, size = 20),
           panel.spacing = unit(.25,'lines'))+
     geom_vline(xintercept = 1)+ #hourly
     geom_vline(xintercept = 24)+ #daily
     geom_vline(xintercept = 96)+ #weekly
     geom_vline(xintercept = 192)+ #biweekly
     geom_vline(xintercept = 384)+ #monthly
-    geom_vline(xintercept = 768) #bimonthly
-
+    geom_vline(xintercept = 768)+ #bimonthly
+    labs(title = 'Nitrate Load Accuracy')
 #ggsave(filename = here('paper','coarsen plot', 'nitrate_annual.png'), width = 14, height = 6)
 #ggsave(filename = here('paper','coarsen plot', 'ca_annual.png'), width = 14, height = 6)
 

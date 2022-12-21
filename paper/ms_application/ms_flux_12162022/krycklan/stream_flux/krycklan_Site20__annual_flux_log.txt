@@ -1,0 +1,1668 @@
+krycklan annual flux log
+time: 2022-12-14 14:49:59 America/New_York
+date:2022-12-14
+-- Site20
+-- STEP_1: read in site info and all chem and discharge data
+---- GN_Ag
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ag complete
+---- GN_Al
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Al complete
+---- GN_As
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_As complete
+---- GN_Au
+---- STEP_2: solute data prep
+---- STEP_2_ERROR: solute failed to read in data
+---- GN_B
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 5 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_B complete
+---- GN_Ba
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ba complete
+---- GN_Be
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Be complete
+---- GN_Bi
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Bi complete
+---- GN_Br
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 9 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Br complete
+---- GN_Ca
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ca complete
+---- GN_Cd
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Cd complete
+---- GN_Ce
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ce complete
+---- GN_Cl
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Cl complete
+---- GN_Co
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Co complete
+---- GN_Cr
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Cr complete
+---- GN_Cs
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Cs complete
+---- GN_Cu
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Cu complete
+---- GN_DIC
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_DIC complete
+---- GN_DOC
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 6 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_DOC complete
+---- GN_Dy
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Dy complete
+---- GN_Er
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Er complete
+---- GN_Eu
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Eu complete
+---- GN_F
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_F complete
+---- GN_Fe
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Fe complete
+---- GN_Ga
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Gd
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Gd complete
+---- GN_Ge
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ge complete
+---- GN_Hf
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Hf complete
+---- GN_Hg
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Ho
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ho complete
+---- GN_I
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_I complete
+---- GN_Ir
+---- STEP_2: solute data prep
+---- STEP_2_ERROR: solute failed to read in data
+---- GN_K
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_K complete
+---- GN_La
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_La complete
+---- GN_Li
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Li complete
+---- GN_Lu
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Lu complete
+---- GN_Mg
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Mg complete
+---- GN_Mn
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Mn complete
+---- GN_Mo
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Mo complete
+---- GN_Na
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Na complete
+---- GN_Nb
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Nb complete
+---- GN_Nd
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Nd complete
+---- GN_NH4_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 5 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_NH4_N complete
+---- GN_Ni
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ni complete
+---- GN_NO2_N
+---- STEP_2: solute data prep
+---- STEP_2_ERROR: solute failed to read in data
+---- GN_NO3_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) total good years: 3 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_NO3_N complete
+---- GN_NO3_NO2_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 6 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_NO3_NO2_N complete
+---- GN_Os
+---- STEP_2: solute data prep
+---- STEP_2_ERROR: solute failed to read in data
+---- GN_P
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 6 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_P complete
+---- GN_Pb
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Pb complete
+---- GN_Pd
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Pd complete
+---- GN_PO4_P
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_PO4_P complete
+---- GN_Pr
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Pr complete
+---- GN_Pt
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Rb
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Rb complete
+---- GN_Re
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Re complete
+---- GN_Rh
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Rh complete
+---- GN_Ru
+---- STEP_2: solute data prep
+---- STEP_2_ERROR: solute failed to read in data
+---- GN_S
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_S complete
+---- GN_Sb
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Sb complete
+---- GN_Sc
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Sc complete
+---- GN_Se
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Se complete
+---- GN_Si
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 9 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Si complete
+---- GN_Sm
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Sm complete
+---- GN_Sn
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Sn complete
+---- GN_SO4
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_SO4_S
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_SO4_S complete
+---- GN_Sr
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Sr complete
+---- GN_Ta
+---- STEP_2: solute data prep
+---- STEP_2_ERROR: solute failed to read in data
+---- GN_Tb
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Tb complete
+---- GN_Te
+---- STEP_2: solute data prep
+---- STEP_2_ERROR: solute failed to read in data
+---- GN_Th
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Th complete
+---- GN_Ti
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ti complete
+---- GN_Tl
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Tl complete
+---- GN_Tm
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Tm complete
+---- GN_TN
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_TN complete
+---- GN_TOC
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) total good years: 3 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_TOC complete
+---- GN_U
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_U complete
+---- GN_V
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_V complete
+---- GN_W
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_W complete
+---- GN_Y
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Y complete
+---- GN_Yb
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Yb complete
+---- GN_Zn
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 9 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Zn complete
+---- GN_Zr
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 18612 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Zr complete
+-- STEP_8: Site20 flux attempting write
+-- STEP_8_SUCCESS: Site20 flux written to file
+STEP_8: Site20 annual flux
+end, time: 2022-12-14 14:57:04 America/New_York
+date:2022-12-14

@@ -1,0 +1,3003 @@
+hjandrews annual flux log
+time: 2022-12-15 20:37:02 America/New_York
+date:2022-12-15
+-- GSWS01
+-- STEP_1: read in site info and all chem and discharge data
+---- GN_alk
+---- STEP_2: solute data prep
+---- GN_alk timestamp 
+----     time: 2022-12-15 20:37:03 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_alk complete
+---- GN_Ca
+---- STEP_2: solute data prep
+---- GN_Ca timestamp 
+----     time: 2022-12-15 20:54:28 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ca complete
+---- GN_Cl
+---- STEP_2: solute data prep
+---- GN_Cl timestamp 
+----     time: 2022-12-15 21:12:24 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Cl complete
+---- GN_DOC
+---- STEP_2: solute data prep
+---- GN_DOC timestamp 
+----     time: 2022-12-15 21:30:33 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_DOC complete
+---- GN_DON
+---- STEP_2: solute data prep
+---- GN_DON timestamp 
+----     time: 2022-12-15 21:49:16 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_DON complete
+---- GN_K
+---- STEP_2: solute data prep
+---- GN_K timestamp 
+----     time: 2022-12-15 22:08:24 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_K complete
+---- GN_Mg
+---- STEP_2: solute data prep
+---- GN_Mg timestamp 
+----     time: 2022-12-15 22:28:58 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Mg complete
+---- GN_Na
+---- STEP_2: solute data prep
+---- GN_Na timestamp 
+----     time: 2022-12-15 22:49:07 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Na complete
+---- GN_NH3_N
+---- STEP_2: solute data prep
+---- GN_NH3_N timestamp 
+----     time: 2022-12-15 23:10:11 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_NH3_N complete
+---- GN_NO3_N
+---- STEP_2: solute data prep
+---- GN_NO3_N timestamp 
+----     time: 2022-12-15 23:31:49 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_NO3_N complete
+---- GN_PO4_P
+---- STEP_2: solute data prep
+---- GN_PO4_P timestamp 
+----     time: 2022-12-15 23:53:56 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_PO4_P complete
+---- GN_Si
+---- STEP_2: solute data prep
+---- GN_Si timestamp 
+----     time: 2022-12-16 00:17:25 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Si complete
+---- GN_SO4_S
+---- STEP_2: solute data prep
+---- GN_SO4_S timestamp 
+----     time: 2022-12-16 00:40:55 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_SO4_S complete
+---- GN_suspSed
+---- STEP_2: solute data prep
+---- GN_suspSed timestamp 
+----     time: 2022-12-16 01:04:42 America/New_York
+date:2022-12-16
+---- STEP_2_ERROR: solute failed to read in default unit
+---- GN_TDN
+---- STEP_2: solute data prep
+---- GN_TDN timestamp 
+----     time: 2022-12-16 01:05:15 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_TDN complete
+---- GN_TDP
+---- STEP_2: solute data prep
+---- GN_TDP timestamp 
+----     time: 2022-12-16 01:29:36 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_TDP complete
+---- GN_TKN
+---- STEP_2: solute data prep
+---- GN_TKN timestamp 
+----     time: 2022-12-16 01:54:29 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_TKN complete
+---- GN_UTKN
+---- STEP_2: solute data prep
+---- GN_UTKN timestamp 
+----     time: 2022-12-16 01:56:48 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_UTKN complete
+---- GN_UTN
+---- STEP_2: solute data prep
+---- GN_UTN timestamp 
+----     time: 2022-12-16 01:58:49 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_UTN complete
+---- GN_UTP
+---- STEP_2: solute data prep
+---- GN_UTP timestamp 
+----     time: 2022-12-16 02:24:11 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- (STEP_3) good years: 2004 
+---- (STEP_3) good years: 2005 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2007 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) good years: 2013 
+---- (STEP_3) good years: 2014 
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 15 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2004 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2004 complete
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2006 complete
+------ (STEP_4) 2007 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2007 complete
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2008 complete
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2009 complete
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+------ (STEP_4) 2013 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2013 complete
+------ (STEP_4) 2014 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 338084 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_UTP complete
+-- STEP_8: GSWS01 flux attempting write
+-- STEP_8_SUCCESS: GSWS01 flux written to file
+STEP_8: GSWS01 annual flux
+end, time: 2022-12-16 02:50:39 America/New_York
+date:2022-12-16

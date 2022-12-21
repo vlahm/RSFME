@@ -1,0 +1,287 @@
+
+This MacroSheds data product (precip_chemistry__ms004) was generated from the following munged MacroSheds product(s):
+
+precip_chemistry__5491
+precip_chemistry__5492
+
+Source data were retrieved from the following web page(s), static file(s), or web-API endpoint(s):
+
+precip_chemistry__5491:
+https://www.hydroshare.org/resource/4ab76a12613c493d82b2df57aa970c24
+
+precip_chemistry__5492:
+https://www.hydroshare.org/resource/38c0e61607e74c329ac798c8001bfa95
+
+Using these notes, our code on GitHub, and assuming you have a good bit of R programming experience,
+you will ideally be able to piece together exactly how precip_chemistry__ms004 was generated and regenerate it yourself.
+That said, automated documentation like this is bound to have some errors and missing details until
+we get all the kinks worked out, and in any case assembling all the code below into a usable script
+won't be an easy task. Please contact us at mail@macrosheds.org if you're having trouble
+navigating our docs.
+
+Below you will find the "derive kernel" function(s) by which precip_chemistry__ms004 was generated.
+Note that MacroSheds products may have precursors that are themselves derived products. In some
+cases, these derived precursors are named above and have their own separate documentation. In other
+cases, derived precursors are generated from stand-alone derive kernels whose entire definition and
+history can be displayed here. A stand-alone kernel might, for example, pull supplemental data
+from a source other than its own network/domain. Here is the code for precip_chemistry__ms004's derive kernel function,
+and for any stand-alone precursor derive kernel function(s):
+
+process_2_ms004 <- function (network, domain, prodname_ms) 
+{
+    precip_prodname_ms <- get_derive_ingredient(network = network, 
+        domain = domain, prodname = "precip_chemistry", ignore_derprod = TRUE, 
+        accept_multiple = TRUE)
+    files <- ms_list_files(network = network, domain = domain, 
+        prodname_ms = precip_prodname_ms)
+    site_feather <- str_split_fixed(files, "/", n = Inf)[, 6]
+    sites <- unique(str_split_fixed(site_feather, "[.]", n = Inf)[, 
+        1])
+    d <- tibble()
+    for (i in 1:length(sites)) {
+        site_files <- grep(sites[i], files, value = TRUE)
+        site_full <- map_dfr(site_files, read_feather)
+        d <- rbind(d, site_full)
+    }
+    d <- qc_hdetlim_and_uncert(d, prodname_ms = prodname_ms)
+    d <- synchronize_timestep(d)
+    dir <- glue("data/{n}/{d}/derived/{p}", n = network, d = domain, 
+        p = prodname_ms)
+    dir.create(dir, showWarnings = FALSE)
+    for (i in 1:length(sites)) {
+        site_full <- filter(d, site_code == !!sites[i])
+        write_ms_file(d = site_full, network = network, domain = domain, 
+            prodname_ms = prodname_ms, site_code = sites[i], 
+            level = "derived", shapefile = FALSE)
+    }
+    return()
+}
+
+These were the arguments to that/those function(s):
+
+network = 'czo'
+domain = 'catalina_jemez'
+prodname_ms = 'precip_chemistry__ms004'
+
+Zero or more function definitions follow, depending on the number of munged products that
+are precursors to precip_chemistry__ms004:
+
+This is the "munge kernel" function for precip_chemistry__5491:
+
+process_1_5491 <- function (network, domain, prodname_ms, site_code, component) 
+{
+    rawfile <- glue("data/{n}/{d}/raw/{p}/{s}/{c}", n = network, 
+        d = domain, p = prodname_ms, s = site_code, c = component)
+    d <- read.csv(rawfile, colClasses = "character")
+    method_col <- names(d)[grepl("Method", names(d))]
+    d <- d %>% mutate(time = str_split_fixed(DateTime, " ", n = Inf)[, 
+        2]) %>% mutate(time = ifelse(nchar(time) == 4, paste0("0", 
+        time), time)) %>% mutate(date = str_split_fixed(DateTime, 
+        " ", n = Inf)[, 1]) %>% filter(.data[[method_col]] == 
+        "PrcpColl")
+    d <- d %>% mutate(SiteCode = case_when(SiteCode == "B2D-PGC" ~ 
+        "B2D_PG", SiteCode == "B2D-PRC" ~ "B2D_PR", SiteCode == 
+        "B2D-PSC" ~ "B2D_PS", TRUE ~ SiteCode))
+    d[] <- lapply(d[], function(x) gsub(",", "", x))
+    if (!"SO4" %in% names(d)) {
+        return(NULL)
+    }
+    data_cols <- c("pH", EC = "spCond", "TIC", "TOC", "TN", F. = "F", 
+        Cl. = "Cl", NO2. = "NO2", Br. = "Br", NO3. = "NO3", "SO4", 
+        "PO4", Be9 = "Be", B11 = "B", Al27 = "Al", Na23 = "Na", 
+        Mg24 = "Mg", Si28 = "Si", K39 = "K", Ca40 = "Ca", "Ti49", 
+        V51 = "V", Cr52 = "Cr", Mn55 = "Mn", Fe56 = "Fe", Co59 = "Co", 
+        "Ni60", Cu63 = "Cu", Zn64 = "Zn", As75 = "As", "Se78", 
+        Y89 = "Y", Mo98 = "Mo", Ag107 = "Ag", Sr88 = "Sr", "Sn118", 
+        Sb121 = "Sb", Ba138 = "Ba", La139 = "La", Ce140 = "Ce", 
+        Pr141 = "Pr", "Nd145", "Sm147", Eu153 = "Eu", "Gd157", 
+        Tb159 = "Tb", Dy164 = "Dy", Ho165 = "Ho", Er166 = "Er", 
+        Tm169 = "Tm", Yb174 = "Yb", Lu175 = "Lu", Tl205 = "Tl", 
+        Pb208 = "Pb", U238 = "U", NH4.N = "NH4_N")
+    d <- ms_read_raw_csv(preprocessed_tibble = d, datetime_cols = list(date = "%m/%e/%Y", 
+        time = "%H:%M"), datetime_tz = "US/Mountain", site_code_col = "SiteCode", 
+        data_cols = c("pH", EC = "spCond", "TIC", "TOC", "TN", 
+            F. = "F", Cl. = "Cl", NO2. = "NO2", Br. = "Br", NO3. = "NO3", 
+            "SO4", "PO4", Be9 = "Be", B11 = "B", Al27 = "Al", 
+            Na23 = "Na", Mg24 = "Mg", Si28 = "Si", K39 = "K", 
+            Ca40 = "Ca", "Ti49", V51 = "V", Cr52 = "Cr", Mn55 = "Mn", 
+            Fe56 = "Fe", Co59 = "Co", "Ni60", Cu63 = "Cu", Zn64 = "Zn", 
+            As75 = "As", "Se78", Y89 = "Y", Mo98 = "Mo", Ag107 = "Ag", 
+            Sr88 = "Sr", "Sn118", Sb121 = "Sb", Ba138 = "Ba", 
+            La139 = "La", Ce140 = "Ce", Pr141 = "Pr", "Nd145", 
+            "Sm147", Eu153 = "Eu", "Gd157", Tb159 = "Tb", Dy164 = "Dy", 
+            Ho165 = "Ho", Er166 = "Er", Tm169 = "Tm", Yb174 = "Yb", 
+            Lu175 = "Lu", Tl205 = "Tl", Pb208 = "Pb", U238 = "U", 
+            NH4.N = "NH4_N"), data_col_pattern = "#V#", set_to_NA = c("-9999.000", 
+            "-9999", "-999.9", "-999", "-9,999"), is_sensor = FALSE)
+    d <- ms_cast_and_reflag(d, varflag_col_pattern = NA)
+    d <- ms_conversions(d, convert_units_from = c(Be = "ug/l", 
+        Al = "ug/l", Ti49 = "ug/l", V = "ug/l", Cr = "ug/l", 
+        Mn = "ug/l", Fe = "ug/l", Co = "ug/l", Ni60 = "ug/l", 
+        Cu = "ug/l", Zn = "ug/l", As = "ug/l", Se78 = "ug/l", 
+        Y = "ug/l", Mo = "ug/l", Ag = "ug/l", Cd = "ug/l", Sn118 = "ug/l", 
+        Sb = "ug/l", Ba = "ug/l", La = "ng/l", Ce = "ng/l", Pr = "ng/l", 
+        Nd145 = "ng/l", Sm147 = "ng/l", Eu = "ng/l", Gd157 = "ng/l", 
+        Tb = "ng/l", Dy = "ng/l", Ho = "ng/l", Er = "ng/l", Tm = "ng/l", 
+        Yb = "ng/l", Lu = "ng/l", Tl = "ug/l", Pb = "ug/l", U = "ng/l"), 
+        convert_units_to = c(Be = "mg/l", Al = "mg/l", Ti49 = "mg/l", 
+            V = "mg/l", Cr = "mg/l", Mn = "mg/l", Fe = "mg/l", 
+            Co = "mg/l", Ni60 = "mg/l", Cu = "mg/l", Zn = "mg/l", 
+            As = "mg/l", Se78 = "mg/l", Y = "mg/l", Mo = "mg/l", 
+            Ag = "mg/l", Cd = "mg/l", Sn118 = "mg/l", Sb = "mg/l", 
+            Ba = "mg/l", La = "mg/l", Ce = "mg/l", Pr = "mg/l", 
+            Nd145 = "mg/l", Sm147 = "mg/l", Eu = "mg/l", Gd157 = "mg/l", 
+            Tb = "mg/l", Dy = "mg/l", Ho = "mg/l", Er = "mg/l", 
+            Tm = "mg/l", Yb = "mg/l", Lu = "mg/l", Tl = "mg/l", 
+            Pb = "mg/l", U = "mg/l"))
+    d <- qc_hdetlim_and_uncert(d, prodname_ms = prodname_ms)
+    return(d)
+}
+
+These were the arguments to that function:
+
+network = 'czo'
+domain = 'catalina_jemez'
+prodname_ms = 'precip_chemistry__5491'
+site_code = <separately, each of: 'data_v2', with corresponding component>
+component(s) = 
+	for site: data_v2
+		comp(s): AZ_Precipitation_Chem_2011.csv, AZ_Precipitation_Chem_2012.csv, AZ_Precipitation_Chem_2013.csv, AZ_Precipitation_Chem_2014.csv, AZ_Precipitation_Chem_2015.csv, AZ_Precipitation_Chem_2016.csv, AZ_Precipitation_Chem_2017.csv, AZ_Precipitation_Chem_2018.csv, AZ_Precipitation_Chem_2019.csv, Isotopes_Precipitation_2006-2015.csv
+
+This is the "munge kernel" function for precip_chemistry__5492:
+
+process_1_5492 <- function (network, domain, prodname_ms, site_code, component) 
+{
+    rawfile <- glue("data/{n}/{d}/raw/{p}/{s}/{c}", n = network, 
+        d = domain, p = prodname_ms, s = site_code, c = component)
+    d <- read.csv(rawfile, colClasses = "character")
+    col_names <- colnames(d)
+    units <- as.character(d[1, ])
+    names(units) <- col_names
+    units <- units[!grepl(paste(c("DateTime", "SiteCode", "SampleCode", 
+        "Sampling", "Method", "SampleType", "SampleMedium", "pH", 
+        "ph.1", "Temp", "FI", "HIX", "SUVA", "SamplingNote", 
+        "d13C.DIC", "dD", "d18O", "EC", "DO", "Alkalinity", "UVA254", 
+        "Offser", "Cond"), collapse = "|"), col_names)]
+    units <- units[!grepl("mg/L", units)]
+    d <- d %>% filter(SiteCode %in% c("RainColl_Burn_Low_OC", 
+        "RainColl_MCZOB"))
+    col_names_to_vars <- c("pH", EC = "spCond", Cond = "spCond", 
+        "TIC", "TOC", "TN", "F", "Cl", "NO2", "Br", "NO3", "SO4", 
+        "PO4", Be9 = "Be", B11 = "B", Na23 = "Na", Mg24 = "Mg", 
+        Al27 = "Al", Si28 = "Si", P31 = "P", K39 = "K", Ca40 = "Ca", 
+        "Ti49", V52 = "V", Cr52 = "Cr", Mn55 = "Mn", Fe56 = "Fe", 
+        Co59 = "Co", "Ni60", Cu63 = "Cu", Zn64 = "Zn", As75 = "As", 
+        "Se78", Y89 = "Y", Mo98 = "Mo", Ag107 = "Ag", Cd114 = "Cd", 
+        "Sn118", Sb121 = "Sb", Ba138 = "Ba", La139 = "La", Ce140 = "Ce", 
+        Pr141 = "Pr", "Nd145", Sm147 = "Sm", Eu153 = "Eu", "Gd157", 
+        Tb159 = "Tb", Dy164 = "Dy", Ho165 = "Ho", Er166 = "Er", 
+        Tm169 = "Tm", Yb174 = "Yb", Lu175 = "Lu", Tl205 = "Tl", 
+        Pb208 = "Pb", U238 = "U", F. = "F", Cl. = "Cl", NO2. = "NO2", 
+        Br. = "Br", NO3. = "NO3", SO4. = "SO4", PO4. = "PO4")
+    if (nrow(d) == 0) {
+        return(NULL)
+    }
+    names(col_names_to_vars) <- ifelse(names(col_names_to_vars) == 
+        "", unname(col_names_to_vars), names(col_names_to_vars))
+    col_names_to_vars <- col_names_to_vars[names(col_names_to_vars) %in% 
+        names(d)]
+    if (any(duplicated(unname(col_names_to_vars)))) {
+        col_names_to_vars <- col_names_to_vars[!duplicated(unname(col_names_to_vars))]
+    }
+    d <- ms_read_raw_csv(preprocessed_tibble = d, datetime_cols = list(DateTime = "%m/%e/%Y %H:%M"), 
+        datetime_tz = "US/Mountain", site_code_col = "SiteCode", 
+        alt_site_code = list(Burn_Met_Low = "RainColl_Burn_Low_OC", 
+            MCZOB_met = "RainColl_MCZOB"), data_cols = col_names_to_vars, 
+        data_col_pattern = "#V#", set_to_NA = c("-9999.000", 
+            "-9999", "-999.9", "-999"), is_sensor = FALSE)
+    d <- ms_cast_and_reflag(d, varflag_col_pattern = NA)
+    for (i in 1:length(units)) {
+        new_name <- col_names_to_vars[names(units[i]) == names(col_names_to_vars)]
+        if (length(new_name) == 0) {
+            next
+        }
+        names(units)[i] <- unname(new_name)
+    }
+    units <- units[names(units) %in% unname(col_names_to_vars)]
+    units <- tolower(units)
+    new_units_names <- names(units)
+    units <- str_replace_all(units, "umoles/l", "umol/l")
+    names(units) <- new_units_names
+    new_units <- rep("mg/l", length(units))
+    names(new_units) <- names(units)
+    d <- ms_conversions(d, convert_units_from = units, convert_units_to = new_units)
+    d <- qc_hdetlim_and_uncert(d, prodname_ms = prodname_ms)
+    return(d)
+}
+
+These were the arguments to that function:
+
+network = 'czo'
+domain = 'catalina_jemez'
+prodname_ms = 'precip_chemistry__5492'
+site_code = <separately, each of: 'data_v2', with corresponding component>
+component(s) = 
+	for site: data_v2
+		comp(s): NM_Precipitation_Chem_2011.csv, NM_Precipitation_Chem_2012.csv, NM_Precipitation_Chem_2013.csv, NM_Precipitation_Chem_2014.csv, NM_Precipitation_Chem_2015.csv, NM_Precipitation_Chem_2016.csv, NM_Precipitation_Chem_2017.csv, NM_Precipitation_Chem_2018.csv, NM_Precipitation_Chem_2019.csv, NM_Snow_Chem_2015.csv
+
+---
+
+Functions from external packages called inside the kernel function are either
+referenced with `<package name>::<function>`, or are called from their aliases, defined in:
+
+https://github.com/MacroSHEDS/data_processing/blob/master/src/function_aliases.R
+
+For definitions of most MacroSheds functions called, see:
+
+https://github.com/MacroSHEDS/data_processing/blob/master/src/global_helpers.R
+
+Definitions not found there will be found in src/<network>/network_helpers.R or
+src/<network>/<domain>/domain_helpers.R, where network is e.g. lter and domain
+is e.g. hbef (Hubbard Brook Experimental Forest). For a catalogue of networks
+and domains, download our site data table from the Data tab at macrosheds.org.
+
+After all the kernels have completed their jobs, there is a whole suite of
+post-processing steps, some of which further modify derived data. See
+postprocess_entire_dataset() in global_helpers.R for a list of these.
+
+Note that most MacroSheds functions are wrapped in a decorator function (handle_errors,
+defined in global_helpers.R; see tinsel package for details). This decorator is not needed
+to run the functions it wraps. To circumvent it, just make sure you don't load
+function definitions using tinsel::source_decoratees. This would only happen if you
+were to execute MacroSheds code line-by-line, starting from:
+
+https://github.com/MacroSHEDS/data_processing/blob/master/src/acquisition_master.R
+
+Also note that the return value of a munge kernel function may be additionally modified by
+a munge engine function. Inside the body of the engine function, you can see where the
+munge kernel is retrieved with get() and called via do.call(). Usually, the only additional munging
+done by the munge engine (versus the munge kernel) would be to separate
+a data file that contains many sites into individual data files of only one site each.
+Munge engines are defined in:
+
+https://github.com/MacroSHEDS/data_processing/blob/master/src/munge_engines.R
+
+Finally, consider that you may clone our entire project from Github and get it running
+on your own machine. Getting every component to run will require a file called config.json
+at the top level of each project repository (data_processing/ and portal/) with your own
+values instead of <...> for each of the following fields:
+
+}
+    "gmail_pw": "< >",
+    "report_emails": ["<email1>", "<email2 etc>"],
+    "variables_gsheet": "https://docs.google.com/spreadsheets/< >",
+    "site_data_gsheet": "https://docs.google.com/spreadsheets/< >",
+    "delineation_gsheet": "https://docs.google.com/spreadsheets/< >",
+    "univ_prods_gsheet:": "https://docs.google.com/spreadsheets/< >",
+    "name_variant_gsheet": "https://docs.google.com/spreadsheets/< >",
+    "gee_login_<yourname>": "< >",
+    "orcid_login_<yourname>": "< >",
+    "orcid_pass_<yourname>": "< >",
+}
+
+Of course, you won't need connections to the ORCID database or google sheets in order to make headway.
+For example, just set config_storage_location = 'local' in your call to ms_init in data_processing/src/acquisition_master.R
+and gsheets becomes irrelevant. Our system is not fully set up to bypass the errors that would result from omitting
+some of this config information, but workarounds (like commenting lines or inserting tryCatch blocks) should be
+possible. This is something we'll be working on in later phases of the project.

@@ -1,0 +1,6 @@
+krew annual flux log
+time: 2022-12-14 14:43:44 America/New_York
+date:2022-12-14
+-- B200
+-- STEP_1: read in site info and all chem and discharge data
+-- STEP_1_ERROR: B200 chem data read-in failed

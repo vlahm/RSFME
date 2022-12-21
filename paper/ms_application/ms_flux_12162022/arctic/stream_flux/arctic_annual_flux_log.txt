@@ -1,0 +1,165 @@
+arctic annual flux log
+time: 2022-12-07 11:13:36 America/New_York
+date:2022-12-07
+-- Kuparuk_River_0.56-- Oksrukuyik_Creek_2.7
+
+-- Roche_Moutonnee_Creek_Main
+-- Toolik_Inlet_Main
+-- Trevor_Creek_Main
+-- STEP_1: read in site info and all chem and discharge data
+-- STEP_1: read in site info and all chem and discharge data
+-- STEP_1: read in site info and all chem and discharge data-- STEP_1: read in site info and all chem and discharge data
+
+-- STEP_1: read in site info and all chem and discharge data
+---- GN_DOC
+---- STEP_2: solute data prep
+---- GN_DOC
+---- STEP_2: solute data prep
+---- GN_DOC
+---- STEP_2: solute data prep
+---- GN_Cl
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3: data checks
+---- STEP_3: data checks---- STEP_3: data checks
+
+---- STEP_3_ERROR: no good years 
+---- GN_NH4_N
+---- STEP_2: solute data prep
+---- STEP_3_ERROR: no good years 
+---- STEP_3_ERROR: no good years 
+---- GN_DOC
+---- STEP_2: solute data prep
+---- GN_NH4_N
+---- STEP_2: solute data prep
+---- STEP_3_ERROR: no good years 
+---- GN_NH4_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3: data checks
+---- STEP_3: data checks
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_NO3_NO2_N
+---- STEP_2: solute data prep
+---- STEP_3_ERROR: no good years 
+---- GN_NO3_NO2_N
+---- STEP_2: solute data prep
+---- STEP_3_ERROR: no good years 
+---- GN_NH4_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_NO3_NO2_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- STEP_3: data checks
+---- GN_SRP
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_SRP
+---- STEP_2: solute data prep
+---- STEP_3_ERROR: no good years 
+---- GN_NO3_NO2_N
+---- STEP_2: solute data prep
+---- STEP_3_ERROR: no good years 
+---- STEP_3: data checks
+---- GN_SRP
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_TDN
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_TDN
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_SO4_S
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_TDN
+---- STEP_2: solute data prep
+---- GN_Ca
+---- STEP_2: solute data prep
+---- STEP_3_ERROR: no good years 
+---- GN_TDP
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_TDP
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- STEP_3: data checks
+---- GN_SRP
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- STEP_3_ERROR: no good years 
+---- GN_TDP
+---- STEP_2: solute data prep
+---- STEP_3_ERROR: no good years 
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Cl
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_TDN
+---- STEP_2: solute data prep
+---- STEP_3_ERROR: no good years 
+---- STEP_3: data checks
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_TDP
+---- STEP_2: solute data prep
+---- STEP_3_ERROR: no good years 
+---- GN_DOC
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- STEP_3_ERROR: no good years 
+---- GN_K
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Mg
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Na
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_NH4_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_NO3_NO2_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_SO4_S
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_SRP
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_TDN
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_TDP
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 

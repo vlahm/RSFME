@@ -1,0 +1,6 @@
+catalina_jemez annual flux log
+time: 2022-12-08 18:17:26 America/New_York
+date:2022-12-08
+-- UpperJaramilloSpring
+-- STEP_1: read in site info and all chem and discharge data
+-- STEP_1_ERROR: UpperJaramilloSpring chem data read-in failed

@@ -1,0 +1,122 @@
+shale_hills annual flux log
+time: 2022-12-15 08:24:58 America/New_York
+date:2022-12-15
+-- GRO
+-- STEP_1: read in site info and all chem and discharge data
+---- GN_Al
+---- STEP_2: solute data prep
+---- GN_Al timestamp 
+----     time: 2022-12-15 08:24:58 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Ba
+---- STEP_2: solute data prep
+---- GN_Ba timestamp 
+----     time: 2022-12-15 08:24:58 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Ca
+---- STEP_2: solute data prep
+---- GN_Ca timestamp 
+----     time: 2022-12-15 08:24:58 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Cl
+---- STEP_2: solute data prep
+---- GN_Cl timestamp 
+----     time: 2022-12-15 08:24:58 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_F
+---- STEP_2: solute data prep
+---- GN_F timestamp 
+----     time: 2022-12-15 08:24:58 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Fe
+---- STEP_2: solute data prep
+---- GN_Fe timestamp 
+----     time: 2022-12-15 08:24:59 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_K
+---- STEP_2: solute data prep
+---- GN_K timestamp 
+----     time: 2022-12-15 08:24:59 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Mg
+---- STEP_2: solute data prep
+---- GN_Mg timestamp 
+----     time: 2022-12-15 08:24:59 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Mn
+---- STEP_2: solute data prep
+---- GN_Mn timestamp 
+----     time: 2022-12-15 08:24:59 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Na
+---- STEP_2: solute data prep
+---- GN_Na timestamp 
+----     time: 2022-12-15 08:24:59 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_NO3_N
+---- STEP_2: solute data prep
+---- GN_NO3_N timestamp 
+----     time: 2022-12-15 08:24:59 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_P
+---- STEP_2: solute data prep
+---- GN_P timestamp 
+----     time: 2022-12-15 08:24:59 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Si
+---- STEP_2: solute data prep
+---- GN_Si timestamp 
+----     time: 2022-12-15 08:24:59 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_SO4_S
+---- STEP_2: solute data prep
+---- GN_SO4_S timestamp 
+----     time: 2022-12-15 08:24:59 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Sr
+---- STEP_2: solute data prep
+---- GN_Sr timestamp 
+----     time: 2022-12-15 08:24:59 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Zn
+---- STEP_2: solute data prep
+---- GN_Zn timestamp 
+----     time: 2022-12-15 08:24:59 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+-- STEP_8: GRO flux attempting write
+-- STEP_8_SUCCESS: GRO flux written to file
+STEP_8: GRO annual flux
+end, time: 2022-12-15 08:24:59 America/New_York
+date:2022-12-15

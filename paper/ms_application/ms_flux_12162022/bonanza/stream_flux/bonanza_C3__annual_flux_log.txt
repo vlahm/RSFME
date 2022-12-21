@@ -1,0 +1,62 @@
+bonanza annual flux log
+time: 2022-12-08 15:53:28 America/New_York
+date:2022-12-08
+-- C3
+-- STEP_1: read in site info and all chem and discharge data
+---- IN_Al
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- IN_Ca
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- IN_Cl
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- IN_DIC
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- IN_DOC
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- IN_DON
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- IN_K
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- IN_Mg
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- IN_Na
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- IN_NO3_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- IN_SiO2_Si
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- IN_SO4_S
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- IN_TDN
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+-- STEP_8: C3 flux attempting write
+-- STEP_8_SUCCESS: C3 flux written to file
+STEP_8: C3 annual flux
+end, time: 2022-12-08 15:53:39 America/New_York
+date:2022-12-08

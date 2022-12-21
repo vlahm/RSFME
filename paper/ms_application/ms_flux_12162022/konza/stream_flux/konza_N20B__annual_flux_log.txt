@@ -1,0 +1,52 @@
+konza annual flux log
+time: 2022-12-16 18:07:13 America/New_York
+date:2022-12-16
+-- N20B
+-- STEP_1: read in site info and all chem and discharge data
+---- GN_DOC
+---- STEP_2: solute data prep
+---- GN_DOC timestamp 
+----     time: 2022-12-16 18:07:21 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_NH4_N
+---- STEP_2: solute data prep
+---- GN_NH4_N timestamp 
+----     time: 2022-12-16 18:07:21 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_NO3_N
+---- STEP_2: solute data prep
+---- GN_NO3_N timestamp 
+----     time: 2022-12-16 18:07:21 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_SRP
+---- STEP_2: solute data prep
+---- GN_SRP timestamp 
+----     time: 2022-12-16 18:07:21 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_TN
+---- STEP_2: solute data prep
+---- GN_TN timestamp 
+----     time: 2022-12-16 18:07:21 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_TP
+---- STEP_2: solute data prep
+---- GN_TP timestamp 
+----     time: 2022-12-16 18:07:22 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+-- STEP_8: N20B flux attempting write
+-- STEP_8_SUCCESS: N20B flux written to file
+STEP_8: N20B annual flux
+end, time: 2022-12-16 18:07:22 America/New_York
+date:2022-12-16

@@ -1,0 +1,30 @@
+plum annual flux log
+time: 2022-12-14 14:50:30 America/New_York
+date:2022-12-14
+-- upper_ipswich
+-- STEP_1: read in site info and all chem and discharge data
+---- GN_NH4_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_NO2_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_NO3_NO2_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_PO4_P
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Si
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+-- STEP_8: upper_ipswich flux attempting write
+-- STEP_8_SUCCESS: upper_ipswich flux written to file
+STEP_8: upper_ipswich annual flux
+end, time: 2022-12-14 14:50:31 America/New_York
+date:2022-12-14

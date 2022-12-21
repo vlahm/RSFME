@@ -10,18 +10,58 @@ library(ggpubr)
 library(patchwork)
 library(RiverLoad)
 library(cowplot)
+library(zoo)
 
 set.seed(53045)
 
 
 source(here('source/flux_methods.R'))
 
-thin_freq <- 'biweekly'
 #thin_freq <- 'weekly'
+#thin_freq <- 'biweekly'
 #thin_freq <- 'monthly'
+thin_freqs <- c('weekly','biweekly', 'monthly')
+for(n in 1:3){
+thin_freq = thin_freqs[n]
 #period <- 'month'
 period <- 'annual'
-reps = 10
+reps = 100
+
+# coarsen function
+if(thin_freq == 'weekly'){
+    coarsen_data <- function(chem_df){
+        out <- chem_df %>%
+            filter(hour(datetime) %in% c(13:18)) %>%
+            filter(lubridate::mday(datetime) %in% c(1, 8, 15, 23)) %>%
+            mutate(date = lubridate::date(datetime)) %>%
+            distinct(date, .keep_all = T)
+        return(out)
+    }
+}
+
+if(thin_freq == 'biweekly'){
+    coarsen_data <- function(chem_df){
+        out <- chem_df %>%
+            filter(hour(datetime) %in% c(13:18)) %>%
+            filter(lubridate::mday(datetime) %in% c(1, 15)) %>%
+            mutate(date = lubridate::date(datetime)) %>%
+            distinct(date, .keep_all = T)
+        return(out)
+    }
+}
+
+if(thin_freq == 'monthly'){
+    coarsen_data <- function(chem_df){
+        out <- chem_df %>%
+            filter(hour(datetime) %in% c(13:18)) %>%
+            filter(lubridate::mday(datetime) %in% c(1)) %>%
+            mutate(date = lubridate::date(datetime)) %>%
+            distinct(date, .keep_all = T)
+        return(out)
+    }
+}
+
+
 
 
 area <- 42.4
@@ -113,32 +153,34 @@ simulated_series = list()
 ## make TS#####
 ###unaltered #####
 reg <- dn$IS_discharge
-reg[dn$IS_discharge < 1] = 1
+#reg[dn$IS_discharge < 0.1] = 0.1
 simulated_series[[1]] = reg + resampled_residuals + 5
-simulated_series[[1]][which(simulated_series[[1]] <= 0)] = 1
+simulated_series[[1]][which(simulated_series[[1]] <= 0)] = 0.1
 hold_factor <- (sum_q/sum(simulated_series[[1]]))
 simulated_series[[1]] <- simulated_series[[1]]*hold_factor
 #lines(dn$datetime, simulated_series[[1]], col = 'blue', type = 'l')
 
 ###stormflow dominated ####
 storm <- dn$IS_discharge
-storm[dn$IS_discharge < 1] = 1
+#storm[dn$IS_discharge < 0.1] = 0.1
 simulated_series[[2]] = storm^1.5 + resampled_residuals + 5
-simulated_series[[2]][which(simulated_series[[2]] <= 0)] = 1
+simulated_series[[2]][which(simulated_series[[2]] <= 0)] = 0.1
 hold_factor <- (sum_q/sum(simulated_series[[2]]))
 simulated_series[[2]] <- simulated_series[[2]]*hold_factor
 #lines(dn$datetime, simulated_series[[2]], col = 'red', type = 'l')
 
 ###baseflow dominated ####
 base <- dn$IS_discharge
-base[dn$IS_discharge < 1] = 1
-simulated_series[[3]] = storm^0.8 + resampled_residuals + 5
-simulated_series[[3]][which(simulated_series[[3]] <= 0)] = 1
+#base[dn$IS_discharge < 0.1] = 0.1
+simulated_series[[3]] <- base^0.9 + resampled_residuals + 5
+simulated_series[[3]] <- rollmean(simulated_series[[3]], k = 10, fill = T)
+simulated_series[[3]][which(simulated_series[[3]] <= 0)] = 0.1
 hold_factor <- (sum_q/sum(simulated_series[[3]]))
 simulated_series[[3]] <- simulated_series[[3]]*hold_factor
 #lines(dn$datetime, simulated_series[[3]], col = 'green', type = 'l')
 
-
+# plot(simulated_series[[3]]~dn$datetime)
+#
 # plot(dn$datetime, dn$IS_discharge, type = 'l', lwd = 2)
 # lines(dn$datetime, simulated_series[[1]], col = 'blue', type = 'l')
 # lines(dn$datetime, simulated_series[[2]], col = 'red', type = 'l')
@@ -168,70 +210,70 @@ plot(log10(simulated_series[[5]])~log10(simulated_series[[1]]))
 
 # plot(simulated_series[[5]]~dn$IS_discharge, data = dn)
 
-#### enriching ####
-##### fit lm to sp ts ####
-## commenting out fdom based values in favor of fully synthetic
-# fit_fdom <- lm(log10(dn$IS_FDOM)~log10(dn$IS_discharge), data = dn)
-# inter_range <- runif(1000, min = confint(fit_fdom)[1,1], max = confint(fit_fdom)[1,2])
-# coef_range <- runif(1000, min = confint(fit_fdom)[2,1], max = confint(fit_fdom)[2,2])
-# error_range <- rnorm(1000, mean = 0, sd = sd(dn$IS_FDOM)/2)
-# simulated_series[[6]] <- as.numeric()
-# ##### for all #####
-# for(j in 1:length(simulated_series[[1]])){
-#     inter <- sample(inter_range, size = 1)
-#     slope <- sample(coef_range, size = 1)
-#     error <- sample(error_range, size = 1)
-#     q <- simulated_series[[1]][j]
-#
-#     pre_error_val <- 10^((log10(q)*slope)+inter)
-#
-#     eps <- pre_error_val+(error*(pre_error_val)/mean(dn$IS_FDOM))
-#
-#     simulated_series[[6]][j] <- pre_error_val + eps
-#
-# }
-## fully synthetic effort
-error_vec <- rnorm(length(simulated_series[[1]]), mean = 1, sd = 0.05)
-simulated_series[[6]] <- (10^((log10(simulated_series[[1]])*1)+1))*error_vec
+#### enriching ######
+error_vec <- rnorm(length(simulated_series[[1]]), mean = 1, sd = 0.1)
+simulated_series[[6]] <- (10^((log10(simulated_series[[1]])*1)-1))*error_vec*hold_factor
+en_unalt <- simulated_series[[6]]
 plot(log10(simulated_series[[6]])~log10(simulated_series[[1]]))
 
 summary(lm(log10(simulated_series[[6]])~log10(simulated_series[[1]])))
+
+simulated_series[[8]] <- (10^((log10(simulated_series[[2]])*1)-1))*error_vec*hold_factor
+en_storm <- simulated_series[[8]]
+
+simulated_series[[9]] <- (10^((log10(simulated_series[[3]])*1)-1))*error_vec*hold_factor
+en_base <- simulated_series[[9]]
+
 #### two part dilution ####
+# now simple dilution #
 ## fully synthetic effort
-error_vec <- rnorm(length(simulated_series[[1]]), mean = 1, sd = 0.05)
-mild <- (10^((log10(simulated_series[[1]])*-0.1))+3)*error_vec
-mean(mild)
-simple <- (10^((log10(simulated_series[[1]])*-1)+2))*error_vec
-mean(simple)
-min(simple)
-tibble(q = log10(simulated_series[[1]]),
-       mild = log10(mild),
-       heavy = log10(simple)) %>%
-ggplot(.,aes(x = q))+
-    geom_point(aes(y = mild))+
-    geom_point(aes(y = heavy), color = 'red')
-
-simulated_series[[7]]<-simulated_series[[1]]
-low_thresh <- 1.45
-high_thresh <- 1.47
-for(j in 1:length(simulated_series[[1]])){
-
-q <- log10(simulated_series[[1]][j])
-if(q < low_thresh){simulated_series[[7]][j] <- mild[j]}
-
-if(q > high_thresh){simulated_series[[7]][j] <- simple[j]}
-
-if(q >= low_thresh &
-   q <= high_thresh){
-    choice <- sample(0:1, 1)
-    if(choice == 0){simulated_series[[7]][j] <- mild[j]}
-    if(choice == 1){simulated_series[[7]][j] <- simple[j]}
-}
-
-}
-
+error_vec <- rnorm(length(simulated_series[[1]]), mean = 1, sd = 0.1)
+simulated_series[[7]] <- (10^((log10(simulated_series[[1]])*-1)+1.25))*error_vec*hold_factor
+di_unalt <- simulated_series[[7]]
 plot(log10(simulated_series[[7]])~log10(simulated_series[[1]]))
-summary(lm(log10(simulated_series[[6]])~log10(simulated_series[[1]])))
+
+summary(lm(log10(simulated_series[[7]])~log10(simulated_series[[1]])))
+
+simulated_series[[10]] <- (10^((log10(simulated_series[[2]])*-1)+1.25))*error_vec*hold_factor
+di_storm <- simulated_series[[10]]
+
+simulated_series[[11]] <- (10^((log10(simulated_series[[3]])*-1)+1.25))*error_vec*hold_factor
+di_base <- simulated_series[[11]]
+
+# error_vec <- rnorm(length(simulated_series[[1]]), mean = 1, sd = 0.05)
+# mild <- (10^((log10(simulated_series[[1]])*-0.1))+3)*error_vec
+# mean(mild)
+# simple <- (10^((log10(simulated_series[[1]])*-1)+2))*error_vec
+# mean(simple)
+# min(simple)
+# tibble(q = log10(simulated_series[[1]]),
+#        mild = log10(mild),
+#        heavy = log10(simple)) %>%
+# ggplot(.,aes(x = q))+
+#     geom_point(aes(y = mild))+
+#     geom_point(aes(y = heavy), color = 'red')
+#
+# simulated_series[[7]]<-simulated_series[[1]]
+# low_thresh <- 1.45
+# high_thresh <- 1.47
+# for(j in 1:length(simulated_series[[1]])){
+#
+# q <- log10(simulated_series[[1]][j])
+# if(q < low_thresh){simulated_series[[7]][j] <- mild[j]}
+#
+# if(q > high_thresh){simulated_series[[7]][j] <- simple[j]}
+#
+# if(q >= low_thresh &
+#    q <= high_thresh){
+#     choice <- sample(0:1, 1)
+#     if(choice == 0){simulated_series[[7]][j] <- mild[j]}
+#     if(choice == 1){simulated_series[[7]][j] <- simple[j]}
+# }
+#
+# }
+
+# plot(log10(simulated_series[[7]])~log10(simulated_series[[1]]))
+# summary(lm(log10(simulated_series[[6]])~log10(simulated_series[[1]])))
 
 
 # shelving this in favor of fully synthetic effort
@@ -279,44 +321,6 @@ summary(lm(log10(simulated_series[[6]])~log10(simulated_series[[1]])))
 # summary(lm(log10(simulated_series[[6]])~log10(simulated_series[[3]])))
 
 # ESTIMATE FLUX #####
-# coarsen function
-if(thin_freq == 'weekly'){
-    coarsen_data <- function(chem_df){
-        out <- chem_df %>%
-            filter(hour(datetime) %in% c(13:18)) %>%
-            filter(lubridate::mday(datetime) %in% c(1, 8, 15, 23)) %>%
-            mutate(date = lubridate::date(datetime)) %>%
-            distinct(date, .keep_all = T)
-        return(out)
-    }
-}
-
-
-
-if(thin_freq == 'biweekly'){
-coarsen_data <- function(chem_df){
-out <- chem_df %>%
-    filter(hour(datetime) %in% c(13:18)) %>%
-    filter(lubridate::mday(datetime) %in% c(1, 15)) %>%
-    mutate(date = lubridate::date(datetime)) %>%
-    distinct(date, .keep_all = T)
-return(out)
-}
-}
-
-if(thin_freq == 'monthly'){
-    coarsen_data <- function(chem_df){
-        out <- chem_df %>%
-            filter(hour(datetime) %in% c(13:18)) %>%
-            filter(lubridate::mday(datetime) %in% c(1)) %>%
-            mutate(date = lubridate::date(datetime)) %>%
-            distinct(date, .keep_all = T)
-        return(out)
-    }
-}
-
-
-
 make_q_daily <- function(q_df){
 out <- q_df %>%
     group_by(lubridate::yday(datetime)) %>%
@@ -537,17 +541,18 @@ run_out <- rbind(
     run_out)
 
 ### strong enrich ####
-chem_df <- coarsen_data(tibble(datetime = dn$datetime, con = simulated_series[[6]])) %>%
+
+##### under unaltered flow #####
+chem_df <- coarsen_data(tibble(datetime = dn$datetime, con = en_unalt)) %>%
     filter(max(q_df$date) >= date,
            min(q_df$date) <= date) %>%
     mutate(site_code = 'w3', wy = target_wy)
 
-##### under unaltered flow #####
 q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[1]])) %>%
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[6]], q_df, period = period, flow_regime = 'unaltered', cq = 'enrich'),
+    calculate_truth(raw_chem_list = en_unalt, q_df, period = period, flow_regime = 'unaltered', cq = 'enrich'),
     run_out)
 # apply
 run_out <- rbind(
@@ -555,11 +560,16 @@ run_out <- rbind(
     run_out)
 
 ##### under storm domination ####
+chem_df <- coarsen_data(tibble(datetime = dn$datetime, con = en_storm)) %>%
+    filter(max(q_df$date) >= date,
+           min(q_df$date) <= date) %>%
+    mutate(site_code = 'w3', wy = target_wy)
+
 q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[2]])) %>%
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[6]], period = period, q_df, flow_regime = 'storm', cq = 'enrich'),
+    calculate_truth(raw_chem_list = en_storm, period = period, q_df, flow_regime = 'storm', cq = 'enrich'),
     run_out)
 # apply
 run_out <- rbind(
@@ -567,11 +577,16 @@ run_out <- rbind(
     run_out)
 
 ##### under base domination ####
+chem_df <- coarsen_data(tibble(datetime = dn$datetime, con = en_base)) %>%
+    filter(max(q_df$date) >= date,
+           min(q_df$date) <= date) %>%
+    mutate(site_code = 'w3', wy = target_wy)
+
 q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[3]])) %>%
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[6]], q_df, period = period, flow_regime = 'base', cq = 'enrich'),
+    calculate_truth(raw_chem_list = en_base, q_df, period = period, flow_regime = 'base', cq = 'enrich'),
     run_out)
 # apply
 run_out <- rbind(
@@ -579,17 +594,19 @@ run_out <- rbind(
     run_out)
 
 ### 2 part dilution ####
-chem_df <- coarsen_data(tibble(datetime = dn$datetime, con = simulated_series[[7]])) %>%
+# now simple dilution
+
+##### under unaltered flow #####
+chem_df <- coarsen_data(tibble(datetime = dn$datetime, con = di_unalt)) %>%
     filter(max(q_df$date) >= date,
            min(q_df$date) <= date) %>%
     mutate(site_code = 'w3', wy = target_wy)
 
-##### under unaltered flow #####
 q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[1]])) %>%
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[7]], period = period, q_df, flow_regime = 'unaltered', cq = 'broken_dilution'),
+    calculate_truth(raw_chem_list = di_unalt, period = period, q_df, flow_regime = 'unaltered', cq = 'broken_dilution'),
     run_out)
 # apply
 run_out <- rbind(
@@ -597,11 +614,16 @@ run_out <- rbind(
     run_out)
 
 ##### under storm domination ####
+chem_df <- coarsen_data(tibble(datetime = dn$datetime, con = di_storm)) %>%
+    filter(max(q_df$date) >= date,
+           min(q_df$date) <= date) %>%
+    mutate(site_code = 'w3', wy = target_wy)
+
 q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[2]])) %>%
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[7]], period = period, q_df, flow_regime = 'storm', cq = 'broken_dilution'),
+    calculate_truth(raw_chem_list = di_storm, period = period, q_df, flow_regime = 'storm', cq = 'broken_dilution'),
     run_out)
 # apply
 run_out <- rbind(
@@ -609,11 +631,16 @@ run_out <- rbind(
     run_out)
 
 ##### under base domination ####
+chem_df <- coarsen_data(tibble(datetime = dn$datetime, con = di_base)) %>%
+    filter(max(q_df$date) >= date,
+           min(q_df$date) <= date) %>%
+    mutate(site_code = 'w3', wy = target_wy)
+
 q_df <- make_q_daily(tibble(datetime = dn$datetime, q_lps = simulated_series[[3]])) %>%
     mutate(site_code = 'w3', wy = target_wy)
 #truth
 run_out <- rbind(
-    calculate_truth(raw_chem_list = simulated_series[[7]], q_df, period = period, flow_regime = 'base', cq = 'broken_dilution'),
+    calculate_truth(raw_chem_list = di_base, q_df, period = period, flow_regime = 'base', cq = 'broken_dilution'),
     run_out)
 # apply
 run_out <- rbind(
@@ -625,12 +652,16 @@ loop_out <- run_out %>%
         mutate(runid = i) %>%
         rbind(., loop_out)
 }
+#save(loop_out, file = here('paper','ts simulation', paste0(thin_freq,'Freq_',reps,'Reps.RData')))
+write_csv(loop_out, file = here('paper','ts simulation', paste0(thin_freq,'Freq_',reps,'Reps2.csv')))
+print(paste(thin_freq, ' done'))
+}
 #save(loop_out, file = here('paper','ts simulation', 'biweekly.RData'))
 #save(loop_out, file = here('paper','ts simulation', 'monthlyflux_biweeklythinning.RData'))
 #load(file = here('paper','ts simulation', 'biweekly.RData'))
 #load(file = here('paper','ts simulation', 'monthlyflux_biweeklythinning.RData'))
 
-# Figure creation #####
+# FIGURE CREATION #####
 # this is curently using the save/load objects to run
 # eventually you will need to make this actually run with both
 if(period == 'month'){
@@ -644,9 +675,21 @@ if(period == 'month'){
 #     rbind(., loop_out %>%
 #               mutate(period = 'Year'))
 
+#### read in data ######
+weekly <- read_csv(here('paper','ts simulation', 'weeklyFreq_100Reps.csv')) %>%
+    mutate(freq = 'Weekly')
+biweekly <- read_csv(here('paper','ts simulation', 'biweeklyFreq_100Reps.csv')) %>%
+    mutate(freq = 'Biweekly')
+monthly <- read_csv(here('paper','ts simulation', 'monthlyFreq_100Reps.csv')) %>%
+    mutate(freq = 'Monthly')
+loop_out <- rbind(weekly, biweekly, monthly) %>%
+    mutate(freq = factor(freq, levels = c('Weekly', 'Biweekly', 'Monthly')))
+
 ### make header plots #####
 side_ymin <- 0.01
 side_ymax <- 1000
+side_breaks <- c(1e-1, 1e1, 1e3)
+side_labels <- c('0.1', '10', '1,000')
 # unaltered q plot
 p1 <- ggplot(dn, aes(x = date))+
         geom_line(aes(y = simulated_series[[1]])) +
@@ -656,7 +699,9 @@ p1 <- ggplot(dn, aes(x = date))+
           axis.title.y=element_blank(),
           text = element_text(size = 20))+
     labs(title = 'Unaltered Flow')+
-    scale_y_log10(limits = c(side_ymin,side_ymax))
+    scale_y_log10(limits = c(side_ymin,side_ymax),
+                  breaks = side_breaks,
+                  labels = side_labels)
 
 p1
 
@@ -669,7 +714,9 @@ p2 <- ggplot(dn, aes(x = date))+
           text = element_text(size = 20))+
     labs(title = 'Stormflow Dominated',
          y = 'Q (lps)')+
-    scale_y_log10(limits = c(side_ymin,side_ymax))
+    scale_y_log10(limits = c(side_ymin,side_ymax),
+                  breaks = side_breaks,
+                  labels = side_labels)
 p2
 
 # base q plot
@@ -682,7 +729,9 @@ p3 <- ggplot(dn, aes(x = date))+
           axis.text.x = element_text(angle = 45, hjust = 1)
           )+
     labs(title = 'Baseflow Dominated')+
-    scale_y_log10(limits = c(side_ymin,side_ymax))+
+    scale_y_log10(limits = c(side_ymin,side_ymax),
+                  breaks = side_breaks,
+                  labels = side_labels)+
     scale_x_continuous(breaks = c(as_date('2015-10-01'), as_date('2016-04-01'), as_date('2016-10-01')),
                        labels = c('10/2015', '4/2016', '10/2016'))
 
@@ -690,16 +739,17 @@ p3 <- ggplot(dn, aes(x = date))+
 p3
 
 # set common limits to top row graphs
-top_row_breaks <- c(1e-2, 1, 1e2, 1e4)
-top_row_labels <- c('0.01', '1', '100', '10,000')
-top_row_ymax <- 1e4
+top_row_breaks <- c(1e-2, 1, 1e2)
+top_row_labels <- c('0.01', '1', '100')
+top_row_ymax <- 1e2
 top_row_ymin <- 1e-2
 # chemo cq
 p4 <- tibble(q = simulated_series[[1]], con = simulated_series[[4]]) %>%
     ggplot(aes(x = q, y = con)) +
     geom_point() +
     theme_classic()+
-    scale_x_log10() +
+    scale_x_log10(breaks = side_breaks,
+                  labels = side_labels) +
     scale_y_log10(limits = c(top_row_ymin, top_row_ymax),
                   breaks = top_row_breaks,
                   labels = top_row_labels) +
@@ -715,9 +765,11 @@ p5 <- tibble(q = simulated_series[[1]], con = simulated_series[[5]]) %>%
     ggplot(aes(x = q, y = con)) +
     geom_point() +
     theme_classic()+
-    scale_x_log10() +
+    scale_x_log10(breaks = side_breaks,
+                  labels = side_labels) +
     scale_y_log10(limits = c(top_row_ymin, top_row_ymax),
-                  breaks = top_row_breaks)+
+                  breaks = top_row_breaks,
+                  labels = top_row_labels)+
     labs(title = 'No Pattern',
          x = 'Q (lps)')+
     theme(axis.title.y=element_blank(),
@@ -729,9 +781,11 @@ p6 <- tibble(q = simulated_series[[1]], con = simulated_series[[6]]) %>%
     ggplot(aes(x = q, y = con)) +
     geom_point() +
     theme_classic()+
-    scale_x_log10() +
+    scale_x_log10(breaks = side_breaks,
+                  labels = side_labels) +
     scale_y_log10(limits = c(top_row_ymin, top_row_ymax),
-                  breaks = top_row_breaks)+
+                  breaks = top_row_breaks,
+                  labels = top_row_labels)+
     labs(title = 'Enriching',
          x = 'Q')+
     theme(axis.title.y=element_blank(),
@@ -744,10 +798,12 @@ p16 <- tibble(q = simulated_series[[1]], con = simulated_series[[7]]) %>%
     ggplot(aes(x = q, y = con)) +
     geom_point() +
     theme_classic()+
-    scale_x_log10() +
+    scale_x_log10(breaks = side_breaks,
+                  labels = side_labels) +
     scale_y_log10(limits = c(top_row_ymin, top_row_ymax),
-                  breaks = top_row_breaks)+
-    labs(title = 'Two-Part Dilution',
+                  breaks = top_row_breaks,
+                  labels = top_row_labels)+
+    labs(title = 'Dilution',
          x = 'Q')+
     theme(axis.title.y=element_blank(),
           axis.title.x=element_blank(),
@@ -757,14 +813,14 @@ p16
 # broken dilution c:q
 
 ### make row 1 plots ####
-ymin = -100
+ymin = -50
 ymax = 100
 
 plot_guts <- function(p){
     ggplot(p, aes(x = method, y = error))+
     geom_hline(yintercept = 0)+
     geom_boxplot(
-        #aes(fill = period)
+        aes(fill = freq)
                  )+
     theme_classic()+
     theme(
@@ -780,14 +836,14 @@ plot_guts <- function(p){
 transform_loop_out <- function(loop_out){
     pivot_wider(loop_out, names_from = method, values_from = estimate,
                 #id_cols = c(runid, period),
-                id_cols = c(runid, thin_freq),
+                id_cols = c(runid, freq),
                 values_fn = mean) %>%
     mutate(pw = ((pw-truth)/truth)*100,
            beale = ((beale - truth)/truth)*100,
            rating = ((rating-truth)/truth)*100,
            composite = ((composite - truth)/truth)*100) %>%
     select(-truth, -runid) %>%
-    pivot_longer(cols = -thin_freq,
+    pivot_longer(cols = -freq,
                  #cols = everything() ,
                  names_to = 'method', values_to = 'error')
 }
@@ -978,4 +1034,4 @@ p19
 (p2+ theme(plot.margin = unit(c(0,30,0,0), "pt")) | p10 | p11 | p12 | p18)/
 (p3+ theme(plot.margin = unit(c(0,30,0,0), "pt")) | p13 | p14 | p15 | p19)
 
-#ggsave(filename = here('paper','ts simulation', 'pop.png'), width = 18, height = 9)
+ggsave(filename = here('paper','ts simulation', 'pop_tall.png'), width = 18, height = 16)
