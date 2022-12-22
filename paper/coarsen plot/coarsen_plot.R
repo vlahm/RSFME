@@ -28,10 +28,6 @@ d <- read_feather('C:/Users/gubbi/desktop/w3_sensor_wdisch.feather') %>%
 target_wy <- 2016
 dn <- d %>%
     filter(wy == target_wy) %>%
-    mutate(IS_discharge = na.approx(IS_discharge),
-           IS_NO3 = na.approx(IS_NO3),
-           IS_FDOM = na.approx(IS_FDOM),
-           IS_spCond = na.approx(IS_spCond)) %>%
     select(date, all_of(target_solute), IS_discharge)
 colnames(dn)[2] <- 'con'
 
@@ -223,5 +219,16 @@ ggplot(., aes(x = hours, y = median))+
 #ggsave(filename = here('paper','coarsen plot', 'nitrate_annual.png'), width = 14, height = 6)
 #ggsave(filename = here('paper','coarsen plot', 'ca_annual.png'), width = 14, height = 6)
 
+plot_tbl %>%
+    filter(method == 'pw') %>%
+    group_by(hours) %>%
+    summarize(error_mean = mean(error),
+              sd = sd(error),
+              hi = error_mean+(sd*1.96),
+              lo = error_mean -(sd*1.96),
+              max = max(error),
+              min = min(error)) %>%
+    ggplot(aes(x = hours, y = error_mean))+
+    geom_point()
 
 

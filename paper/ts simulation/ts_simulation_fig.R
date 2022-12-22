@@ -85,11 +85,7 @@ d <- read_feather('C:/Users/gubbi/desktop/w3_sensor_wdisch.feather') %>%
 # subset to 2016 wy
 target_wy <- 2016
 dn <- d %>%
-    filter(wy == target_wy) %>%
-    mutate(IS_discharge = na.approx(IS_discharge),
-           IS_NO3 = na.approx(IS_NO3),
-           IS_FDOM = na.approx(IS_FDOM),
-           IS_spCond = na.approx(IS_spCond))
+    filter(wy == target_wy)
 
 mean_q <- mean(dn$IS_discharge)
 sum_q <- sum(dn$IS_discharge)
@@ -653,7 +649,7 @@ loop_out <- run_out %>%
         rbind(., loop_out)
 }
 #save(loop_out, file = here('paper','ts simulation', paste0(thin_freq,'Freq_',reps,'Reps.RData')))
-write_csv(loop_out, file = here('paper','ts simulation', paste0(thin_freq,'Freq_',reps,'Reps2.csv')))
+write_csv(loop_out, file = here('paper','ts simulation', paste0(thin_freq,'Freq_',reps,'Reps20221221.csv')))
 print(paste(thin_freq, ' done'))
 }
 #save(loop_out, file = here('paper','ts simulation', 'biweekly.RData'))
@@ -676,11 +672,11 @@ if(period == 'month'){
 #               mutate(period = 'Year'))
 
 #### read in data ######
-weekly <- read_csv(here('paper','ts simulation', 'weeklyFreq_100Reps.csv')) %>%
+weekly <- read_csv(here('paper','ts simulation', 'weeklyFreq_100Reps20221221.csv')) %>%
     mutate(freq = 'Weekly')
-biweekly <- read_csv(here('paper','ts simulation', 'biweeklyFreq_100Reps.csv')) %>%
+biweekly <- read_csv(here('paper','ts simulation', 'biweeklyFreq_100Reps20221221.csv')) %>%
     mutate(freq = 'Biweekly')
-monthly <- read_csv(here('paper','ts simulation', 'monthlyFreq_100Reps.csv')) %>%
+monthly <- read_csv(here('paper','ts simulation', 'monthlyFreq_100Reps20221221.csv')) %>%
     mutate(freq = 'Monthly')
 loop_out <- rbind(weekly, biweekly, monthly) %>%
     mutate(freq = factor(freq, levels = c('Weekly', 'Biweekly', 'Monthly')))
@@ -813,8 +809,8 @@ p16
 # broken dilution c:q
 
 ### make row 1 plots ####
-ymin = -50
-ymax = 100
+ymin = -75
+ymax = 75
 
 plot_guts <- function(p){
     ggplot(p, aes(x = method, y = error))+
@@ -830,6 +826,7 @@ plot_guts <- function(p){
         text = element_text(size = 20),
         legend.position="none"
     )+
+    scale_fill_manual(values = c('darkorange', 'gray', 'deepskyblue'))+
     ylim(ymin, ymax)
 }
 
@@ -856,8 +853,9 @@ p0_data$method <- factor(p0_data$method, levels = c("pw", "beale", "rating", 'co
 
 p0 <-plot_guts(p0_data)+
     theme(legend.position = 'left',
-          legend.title = element_text(size = 25),
-          legend.text = element_text(size = 20)
+          legend.title = element_text(size = 30),
+          legend.text = element_text(size = 25),
+          legend.key.size = unit(2.5, 'cm')
           )+
     labs(fill = 'Frequency')
 
@@ -945,6 +943,7 @@ p12_data <- loop_out %>%
            cq == 'enrich') %>%
     transform_loop_out()
 
+p12_data$error[p18_data$method == 'pw' | p12_data$method == 'beale'] <- NA
 p12_data$method <- factor(p12_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
 p12 <- plot_guts(p12_data)
@@ -956,7 +955,7 @@ p18_data <- loop_out %>%
     filter(flow == 'storm',
            cq == 'broken_dilution') %>%
     transform_loop_out()
-
+p18_data$error[p18_data$method == 'pw' | p18_data$method == 'beale'] <- NA
 p18_data$method <- factor(p18_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
 p18 <- plot_guts(p18_data)
@@ -1034,4 +1033,52 @@ p19
 (p2+ theme(plot.margin = unit(c(0,30,0,0), "pt")) | p10 | p11 | p12 | p18)/
 (p3+ theme(plot.margin = unit(c(0,30,0,0), "pt")) | p13 | p14 | p15 | p19)
 
-ggsave(filename = here('paper','ts simulation', 'pop_tall.png'), width = 18, height = 16)
+ggsave(filename = here('paper','ts simulation', 'pop_tall.png'), width = 22, height = 16)
+
+## make supp table 1####
+pretty_flow <- tibble(flow = c('base', 'storm', 'unaltered'),
+                     flow_pretty = c('Baseflow', 'Stormflow', 'Unaltered'))
+pretty_cq <- tibble(cq = c('broken_dilution', 'enrich', 'none', 'chemostatic'),
+                    cq_pretty = c('Diluting', 'Enriching', 'No-Pattern', 'Chemostatic'))
+pretty_method = tibble(method = c('pw', 'beale', 'rating', 'composite'),
+                       method_pretty = c('Linear Interpolation', 'Beale', 'Rating', 'Composite'))
+
+
+
+supp_tbl_pre <- loop_out %>%
+    pivot_wider(names_from = method, values_from = estimate,
+                #id_cols = c(runid, period),
+                id_cols = c(runid, freq, flow, cq),
+                values_fn = mean) %>%
+    mutate(pw = ((pw-truth)/truth)*100,
+           beale = ((beale - truth)/truth)*100,
+           rating = ((rating-truth)/truth)*100,
+           composite = ((composite - truth)/truth)*100) %>%
+    select(-truth, -runid) %>%
+    pivot_longer(cols = -c(freq, flow, cq),
+                 #cols = everything() ,
+                 names_to = 'method', values_to = 'error') %>%
+    group_by(flow, cq, freq, method) %>%
+    summarize(mean_error = round(mean(error), digits = 2),
+              sd_error = round(sd(error), digits = 2),
+              ci_95_low = round(mean_error-(sd_error*1.96), digits = 2),
+              ci_95_hi = round(mean_error+(sd_error*1.96), digits = 2),
+              min_error = round(min(error), digits = 2),
+              max_error = round(max(error), digits = 2),
+              iqr = IQR(error),
+              median = round(median(error), digits = 2),
+              n_outliers = sum((error > median+(iqr*1.5))+(error < median-(iqr*1.5))),
+              ci = paste0(ci_95_low,', ', ci_95_hi)
+              ) %>%
+    left_join(.,pretty_cq, by = 'cq') %>%
+    left_join(.,pretty_method, by = 'method') %>%
+    left_join(.,pretty_flow, by = 'flow') %>%
+    ungroup()%>%
+    arrange(flow, cq, freq, method) %>%
+    #filter(flow == target_flow) %>%
+    select(`Flow Regime` = flow_pretty, `C:Q` = cq_pretty, Frequency = freq,
+           Method = method_pretty, Mean = mean_error, SD = sd_error,
+           `95% CI` = ci, Median = median, Minimum = min_error, Maximum = max_error, Outliers = n_outliers)
+
+write_csv(supp_tbl_pre, file = here('paper','ts simulation', 'supp_table.csv'))
+
