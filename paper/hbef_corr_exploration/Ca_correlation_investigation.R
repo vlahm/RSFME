@@ -1,5 +1,4 @@
 ## based on Audrey's MSdata_formatconvert_phase2.R
-## this can be used to get clean versions of the data for the PHASE 2 MODEL
 library(here)
 library(tidyverse)
 library(feather)
@@ -9,25 +8,19 @@ library(gridExtra)
 library(grid)
 library(lfstat)
 
-## read in chemistry data
+# read in chemistry data ####
 simple_chem_and_Q <- read_csv(here("paper","hbef_corr_exploration", "HBEFdata_All_2022-11-17.csv")) %>%
     mutate(wy = water_year(date, origin = 'usgs')) %>%
-    filter(site_code == 'w3',
+    filter(site == 'W3',
            wy == 2016)
 
-## run fit likely ions and spCond
-
+# run fit Ca and spCond ####
 complete_ds <- simple_chem_and_Q %>%
-    select(datetime, spCond, Ca, Mg, K, Na) %>%
+    select(datetime, spCond, Ca) %>%
     na.omit(spCond)
 
 summary(lm(Ca~spCond+0, data = complete_ds))
 
-summary(lm(Na~spCond+0, data = complete_ds))
-
-summary(lm(K~spCond+0, data = complete_ds))
-
-summary(lm(Mg~spCond+0, data = complete_ds))
 
 complete_ds %>%
     pivot_longer(cols = -c(datetime, spCond), names_to = 'var', values_to = 'val') %>%
@@ -35,9 +28,7 @@ complete_ds %>%
     geom_point() +
     facet_wrap(~var)
 
-## Ca has the best fit of all of them, with an R-squared of ~0.92 (as does Na)
-## extract fit
-
+# extract fit ####
 fit <- summary(lm(Ca~spCond+0, data = complete_ds))
 fit$coefficients[[1]]
 

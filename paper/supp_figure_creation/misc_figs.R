@@ -16,8 +16,6 @@ source(here('source/flux_methods.R'))
 
 area <- 42.4
 site_code = 'w3'
-#target_solute = 'IS_NO3'
-
 
 # read in data ####
 d <- read_feather('C:/Users/gubbi/desktop/w3_sensor_wdisch.feather') %>%
@@ -26,8 +24,8 @@ d <- read_feather('C:/Users/gubbi/desktop/w3_sensor_wdisch.feather') %>%
 
 # subset to 2016 wy
 target_wy <- 2016
-target_solute = 'IS_spCond'
 
+# clean data and convert conductivity to Ca ####
 dn <- d %>%
     filter(wy == target_wy) %>%
     mutate(IS_discharge = na.approx(IS_discharge),
@@ -36,8 +34,8 @@ dn <- d %>%
     select(datetime, IS_spCond, IS_NO3, IS_discharge)
 
 
-# supplement figures #####
-
+# generate supplemental figures #####
+##  Calcium C:Q relationship ####
 q_breaks = c(1e-2, 1, 1e2)
 q_labels = c('.01', '1', '100')
 
@@ -53,8 +51,24 @@ dn %>%
          y = 'C (mg/L)',
          title = 'Calcium C:Q Relationship')+
     theme(text = element_text(size = 20))
-#ggsave(filename = here('paper','coarsen plot', 'ca_cq.png'), width = 6, height = 6)
+ggsave(filename = here('paper','misc_figure_creation', 'ca_cq.png'), width = 6, height = 6)
 
+##  nitrate C:Q relationship ####
+dn %>%
+    ggplot(aes(x = IS_discharge, y = IS_NO3))+
+    geom_point()+
+    scale_y_log10()+
+    scale_x_log10(breaks = q_breaks,
+                  labels = q_labels) +
+    theme_classic() +
+    geom_smooth(method = 'lm')+
+    labs(x = 'Q (lps)',
+         y = 'C (mg/L)',
+         title = 'Nitrate C:Q Relationship')+
+    theme(text = element_text(size = 20))
+ggsave(filename = here('paper','misc_figure_creation', 'nitrate_cq.png'), width = 6, height = 6)
+
+## chemistry time series ####
 dn %>%
     rename(Nitrate = IS_NO3,
            Calcium = IS_spCond) %>%
@@ -70,8 +84,9 @@ dn %>%
          y = 'C (mg/L)',
          title = 'HBEF Watershed 3 - 2016 Water Year')
 
-#ggsave(filename = here('paper','coarsen plot', 'rawchem.png'), width = 12, height = 6)
+ggsave(filename = here('paper','misc_figure_creation', 'rawchem.png'), width = 12, height = 6)
 
+## Streamflow timeseries ####
 dn %>%
     ggplot(aes(x = datetime, y = IS_discharge)) +
     geom_line()+
@@ -83,4 +98,4 @@ dn %>%
          y = 'Q (Lps)',
          title = 'Streamflow at HBEF Watershed 3 - 2016 Water Year')
 
-#ggsave(filename = here('paper','coarsen plot', 'rawQ.png'), width = 12, height = 6)
+ggsave(filename = here('paper','misc_figure_creation', 'rawQ.png'), width = 12, height = 6)

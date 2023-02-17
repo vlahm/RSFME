@@ -30,7 +30,7 @@ for(n in 1:3){
 thin_freq = thin_freqs[n]
 #period <- 'month'
 period <- 'annual'
-reps = 100
+reps = 2
 
 # Set data coarsening function
 if(thin_freq == 'weekly'){
@@ -96,6 +96,9 @@ resampled_residuals = sample(fit$residuals,
 
 # Initialize output of simulated series
 simulated_series = list()
+
+# sum total q for hold factor ####
+sum_q <- sum(dn$IS_discharge)
 
 ## Flow series creation #####
 ### unaltered #####
@@ -490,8 +493,7 @@ loop_out <- run_out %>%
         mutate(runid = i) %>%
         rbind(., loop_out)
 }
-#save(loop_out, file = here('paper','ts simulation', paste0(thin_freq,'Freq_',reps,'Reps.RData')))
-write_csv(loop_out, file = here('paper','ts simulation', paste0(thin_freq,'Freq_',reps,'Reps20221221.csv')))
+write_csv(loop_out, file = here('paper','ts_simulation', paste0(thin_freq,'Freq_',reps,'Reps20221221.csv')))
 print(paste(thin_freq, ' done'))
 }
-
+save(simulated_series, file =  here('paper','ts_simulation', 'simulated_series.Rdata'))

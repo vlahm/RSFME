@@ -16,20 +16,33 @@ set.seed(53045)
 
 source(here('source/flux_methods.R'))
 # read in data ######
-weekly <- read_csv(here('paper','ts simulation', 'weeklyFreq_100Reps20221221.csv')) %>%
+d <- read_feather('C:/Users/gubbi/desktop/w3_sensor_wdisch.feather') %>%
+    mutate(wy = water_year(datetime, origin = 'usgs'))
+
+## Subset to 2016 wy
+target_wy <- 2016
+dn <- d %>%
+    filter(wy == target_wy)
+## read in output from 1_ts_simulation_analysis.R####
+weekly <- read_csv(here('paper','ts_simulation', 'weeklyFreq_100Reps20221221.csv')) %>%
   mutate(freq = 'Weekly')
-biweekly <- read_csv(here('paper','ts simulation', 'biweeklyFreq_100Reps20221221.csv')) %>%
+biweekly <- read_csv(here('paper','ts_simulation', 'biweeklyFreq_100Reps20221221.csv')) %>%
   mutate(freq = 'Biweekly')
-monthly <- read_csv(here('paper','ts simulation', 'monthlyFreq_100Reps20221221.csv')) %>%
+monthly <- read_csv(here('paper','ts_simulation', 'monthlyFreq_100Reps20221221.csv')) %>%
   mutate(freq = 'Monthly')
 loop_out <- rbind(weekly, biweekly, monthly) %>%
   mutate(freq = factor(freq, levels = c('Weekly', 'Biweekly', 'Monthly')))
+
+## load simulated_series from 1_ts_simulation_analysis.R ####
+load(here('paper','ts_simulation', 'simulated_series.Rdata'))
 
 ### make header plots #####
 side_ymin <- 0.01
 side_ymax <- 1000
 side_breaks <- c(1e-1, 1e1, 1e3)
 side_labels <- c('0.1', '10', '1,000')
+x_axis_text_size = 25
+y_axis_text_size = 25
 # unaltered q plot
 p1 <- ggplot(dn, aes(x = date))+
   geom_line(aes(y = simulated_series[[1]])) +
@@ -37,7 +50,8 @@ p1 <- ggplot(dn, aes(x = date))+
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.title.y=element_blank(),
-        text = element_text(size = 20))+
+        text = element_text(size = 20),
+        axis.text.y = element_text(size = y_axis_text_size))+
   labs(title = 'Unaltered Flow')+
   scale_y_log10(limits = c(side_ymin,side_ymax),
                 breaks = side_breaks,
@@ -51,7 +65,9 @@ p2 <- ggplot(dn, aes(x = date))+
   theme_classic()+
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
-        text = element_text(size = 20))+
+        text = element_text(size = 20),
+        axis.text.y = element_text(size = y_axis_text_size),
+        axis.title.y = element_text(size = y_axis_text_size))+
   labs(title = 'Stormflow Dominated',
        y = 'Q (lps)')+
   scale_y_log10(limits = c(side_ymin,side_ymax),
@@ -66,7 +82,8 @@ p3 <- ggplot(dn, aes(x = date))+
   theme(axis.title.y=element_blank(),
         axis.title.x = element_blank(),
         text = element_text(size = 20),
-        axis.text.x = element_text(angle = 45, hjust = 1)
+        axis.text.x = element_text(angle = 45, hjust = 1, size = x_axis_text_size),
+        axis.text.y = element_text(size = y_axis_text_size)
   )+
   labs(title = 'Baseflow Dominated')+
   scale_y_log10(limits = c(side_ymin,side_ymax),
@@ -96,7 +113,10 @@ p4 <- tibble(q = simulated_series[[1]], con = simulated_series[[4]]) %>%
   labs(title = 'Chemostatic',
        y = 'C (mg/L)')+
   theme(axis.title.x=element_blank(),
-        text = element_text(size = 20))
+        text = element_text(size = 20),
+        axis.text.y = element_text(size = y_axis_text_size),
+        axis.text.x = element_text(size = x_axis_text_size),
+        axis.title.y = element_text(size = y_axis_text_size))
 
 p4
 
@@ -113,7 +133,10 @@ p5 <- tibble(q = simulated_series[[1]], con = simulated_series[[5]]) %>%
   labs(title = 'No Pattern',
        x = 'Q (lps)')+
   theme(axis.title.y=element_blank(),
-        text = element_text(size = 20))
+        text = element_text(size = 20),
+        axis.text.y = element_text(size = y_axis_text_size),
+        axis.text.x = element_text(size = x_axis_text_size),
+        axis.title.x = element_text(size = x_axis_text_size))
 p5
 
 # enrich cq
@@ -130,10 +153,12 @@ p6 <- tibble(q = simulated_series[[1]], con = simulated_series[[6]]) %>%
        x = 'Q')+
   theme(axis.title.y=element_blank(),
         axis.title.x=element_blank(),
-        text = element_text(size = 20))
+        text = element_text(size = 20),
+        axis.text.y = element_text(size = y_axis_text_size),
+        axis.text.x = element_text(size = x_axis_text_size))
 p6
 
-# broekn dilute cq
+# dilute cq
 p16 <- tibble(q = simulated_series[[1]], con = simulated_series[[7]]) %>%
   ggplot(aes(x = q, y = con)) +
   geom_point() +
@@ -147,7 +172,9 @@ p16 <- tibble(q = simulated_series[[1]], con = simulated_series[[7]]) %>%
        x = 'Q')+
   theme(axis.title.y=element_blank(),
         axis.title.x=element_blank(),
-        text = element_text(size = 20))
+        text = element_text(size = 20),
+        axis.text.y = element_text(size = y_axis_text_size),
+        axis.text.x = element_text(size = x_axis_text_size))
 p16
 
 # broken dilution c:q
@@ -168,7 +195,8 @@ plot_guts <- function(p){
       axis.text.x=element_blank(),
       axis.title.y=element_blank(),
       text = element_text(size = 20),
-      legend.position="none"
+      legend.position="none",
+      axis.text.y = element_text(size = y_axis_text_size)
     )+
     scale_fill_manual(values = c('darkorange', 'gray', 'deepskyblue'))+
     ylim(ymin, ymax)
@@ -216,7 +244,8 @@ p7_data <- loop_out %>%
 p7_data$method <- factor(p7_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
 p7 <-plot_guts(p7_data)+
-  theme(axis.title.y=element_text(size = 20))+
+  theme(axis.title.y=element_text(size = 20),
+        axis.text.y = element_text(size = y_axis_text_size))+
   labs(y = " ")
 
 p7
@@ -265,7 +294,7 @@ p10_data <- loop_out %>%
 p10_data$method <- factor(p10_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
 p10 <- plot_guts(p10_data)+
-  theme(axis.title.y=element_text(angle = 90))+
+  theme(axis.title.y=element_text(angle = 90, size = y_axis_text_size))+
   labs(y = 'Error (%)')
 p10
 
@@ -316,10 +345,10 @@ p13_data <- loop_out %>%
 p13_data$method <- factor(p13_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
 p13 <- plot_guts(p13_data)+
-  theme(axis.title.y=element_text(size = 20))+
+  theme(axis.title.y=element_text(size = y_axis_text_size))+
   labs(y = " ") +
-  theme(axis.title.x=element_text(size = 20),
-        axis.text.x=element_text(angle = 45, vjust = .5))+
+  theme(axis.title.x=element_text(size = x_axis_text_size),
+        axis.text.x=element_text(angle = 45, vjust = .9, size = x_axis_text_size, hjust = 1))+
   labs(x = " ")+
   scale_x_discrete(labels = c('LI', 'Beale', 'Rating', 'Composite'))
 p13
@@ -333,8 +362,8 @@ p14_data <- loop_out %>%
 p14_data$method <- factor(p14_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
 p14 <- plot_guts(p14_data) +
-  theme(axis.title.x=element_text(size = 20),
-        axis.text.x=element_text(angle = 45, vjust = .5))+
+  theme(axis.title.x=element_text(size = 30),
+        axis.text.x=element_text(angle = 45, vjust = .9, size = x_axis_text_size, hjust = 1))+
   labs(x = 'Method') +
   scale_x_discrete(labels = c('LI', 'Beale', 'Rating', 'Composite'))
 p14
@@ -348,8 +377,8 @@ p15_data <- loop_out %>%
 p15_data$method <- factor(p15_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
 p15 <- plot_guts(p15_data) +
-  theme(axis.title.x=element_text(size = 20),
-        axis.text.x=element_text(angle = 45, vjust = .5))+
+  theme(axis.title.x=element_text(size = x_axis_text_size),
+        axis.text.x=element_text(angle = 45, vjust = .9, size = x_axis_text_size, hjust = 1))+
   labs(x = " ")+
   scale_x_discrete(labels = c('LI', 'Beale', 'Rating', 'Composite'))
 
@@ -364,22 +393,22 @@ p19_data <- loop_out %>%
 p19_data$method <- factor(p15_data$method, levels = c("pw", "beale", "rating", 'composite'))
 
 p19 <- plot_guts(p19_data) +
-  theme(axis.title.x=element_text(size = 20),
-        axis.text.x=element_text(angle = 45, vjust = .5))+
+  theme(axis.title.x=element_text(size = x_axis_text_size),
+        axis.text.x=element_text(angle = 45, vjust = .9, size = x_axis_text_size, hjust = 1))+
   labs(x = " ")+
   scale_x_discrete(labels = c('LI', 'Beale', 'Rating', 'Composite'))
 
 p19
 
-## make mega fig ####
+# make mega fig ####
 (legend+ theme(plot.margin = unit(c(0,30,0,0), "pt")) | p4 | p5 | p6 | p16)/
   (p1+ theme(plot.margin = unit(c(0,30,0,0), "pt")) | p7 | p8 | p9 | p17)/
   (p2+ theme(plot.margin = unit(c(0,30,0,0), "pt")) | p10 | p11 | p12 | p18)/
   (p3+ theme(plot.margin = unit(c(0,30,0,0), "pt")) | p13 | p14 | p15 | p19)
 
-ggsave(filename = here('paper','ts simulation', 'pop_tall.png'), width = 22, height = 16)
+ggsave(filename = here('paper','ts_simulation', 'pop_test.png'), width = 20, height = 16)
 
-## make supp table 1####
+# make supp table 1 ####
 pretty_flow <- tibble(flow = c('base', 'storm', 'unaltered'),
                       flow_pretty = c('Baseflow', 'Stormflow', 'Unaltered'))
 pretty_cq <- tibble(cq = c('dilution', 'enrich', 'none', 'chemostatic'),
@@ -424,5 +453,5 @@ supp_tbl_pre <- loop_out %>%
          Method = method_pretty, Mean = mean_error, SD = sd_error,
          `95% CI` = ci, Median = median, Minimum = min_error, Maximum = max_error, Outliers = n_outliers)
 
-write_csv(supp_tbl_pre, file = here('paper','ts simulation', 'supp_table.csv'))
+write_csv(supp_tbl_pre, file = here('paper','ts_simulation', 'supp_table.csv'))
 
