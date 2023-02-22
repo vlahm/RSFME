@@ -1,0 +1,124 @@
+baltimore annual flux log
+time: 2022-12-08 12:23:49 America/New_York
+date:2022-12-08
+-- MAWI
+-- STEP_1: read in site info and all chem and discharge data
+---- GN_Cl
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2005 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 3113608 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Cl complete
+---- GN_NO3_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2005 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 3113608 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_NO3_N complete
+---- GN_PO4_P
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2005 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 3113608 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_PO4_P complete
+---- GN_SO4_S
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2005 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 3113608 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_SO4_S complete
+---- GN_TN
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2005 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 3113608 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_TN complete
+---- GN_TP
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2005 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2005 flux calcs (paralell) 
+------ (STEP_4)       session: 3113608 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2005 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_TP complete
+-- STEP_8: MAWI flux attempting write
+-- STEP_8_SUCCESS: MAWI flux written to file
+STEP_8: MAWI annual flux
+end, time: 2022-12-08 12:24:23 America/New_York
+date:2022-12-08

@@ -1,0 +1,12 @@
+catalina_jemez annual flux log
+time: 2022-12-08 18:17:26 America/New_York
+date:2022-12-08
+-- UpperRedondo
+-- STEP_1: read in site info and all chem and discharge data
+---- GN_Ag
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2012 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 

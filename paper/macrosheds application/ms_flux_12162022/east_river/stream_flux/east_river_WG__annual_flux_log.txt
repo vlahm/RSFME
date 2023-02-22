@@ -1,0 +1,6 @@
+east_river annual flux log
+time: 2022-12-12 11:52:45 America/New_York
+date:2022-12-12
+-- WG
+-- STEP_1: read in site info and all chem and discharge data
+-- STEP_1_ERROR: WG chem data read-in failed

@@ -1,0 +1,183 @@
+usgs annual flux log
+time: 2022-12-15 09:32:41 America/New_York
+date:2022-12-15
+-- black_earth_creek
+-- STEP_1: read in site info and all chem and discharge data
+---- GN_Cl
+---- STEP_2: solute data prep
+---- GN_Cl timestamp 
+----     time: 2022-12-15 09:32:41 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) total good years: 3 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 272754 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 272754 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 272754 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Cl complete
+---- GN_NH4_NH3_N
+---- STEP_2: solute data prep
+---- GN_NH4_NH3_N timestamp 
+----     time: 2022-12-15 09:32:49 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2011 
+---- (STEP_3) good years: 2012 
+---- (STEP_3) total good years: 3 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 272754 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2010 complete
+------ (STEP_4) 2011 flux calcs (paralell) 
+------ (STEP_4)       session: 272754 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2011 complete
+------ (STEP_4) 2012 flux calcs (paralell) 
+------ (STEP_4)       session: 272754 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2012 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_NH4_NH3_N complete
+---- GN_NO3_NO2_N
+---- STEP_2: solute data prep
+---- GN_NO3_NO2_N timestamp 
+----     time: 2022-12-15 09:32:56 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_suspSed
+---- STEP_2: solute data prep
+---- GN_suspSed timestamp 
+----     time: 2022-12-15 09:32:58 America/New_York
+date:2022-12-15
+---- STEP_2_ERROR: solute failed to read in default unit
+---- GN_TN
+---- STEP_2: solute data prep
+---- GN_TN timestamp 
+----     time: 2022-12-15 09:33:00 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_UTKN
+---- STEP_2: solute data prep
+---- GN_UTKN timestamp 
+----     time: 2022-12-15 09:33:02 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_UTP
+---- STEP_2: solute data prep
+---- GN_UTP timestamp 
+----     time: 2022-12-15 09:33:04 America/New_York
+date:2022-12-15
+---- STEP_3: data checks
+---- (STEP_3) good years: 2015 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 2015 flux calcs (paralell) 
+------ (STEP_4)       session: 272754 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2015 complete
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 272754 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 272754 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2017 complete
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 272754 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2018 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_UTP complete
+-- STEP_8: black_earth_creek flux attempting write
+-- STEP_8_SUCCESS: black_earth_creek flux written to file
+STEP_8: black_earth_creek annual flux
+end, time: 2022-12-15 09:33:14 America/New_York
+date:2022-12-15

@@ -1,0 +1,278 @@
+konza annual flux log
+time: 2022-12-16 18:07:13 America/New_York
+date:2022-12-16
+-- N01B
+-- STEP_1: read in site info and all chem and discharge data
+---- GN_DOC
+---- STEP_2: solute data prep
+---- GN_DOC timestamp 
+----     time: 2022-12-16 18:07:23 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- (STEP_3) good years: 1997 
+---- (STEP_3) good years: 1998 
+---- (STEP_3) good years: 1999 
+---- (STEP_3) good years: 2001 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 1997 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1998 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1999 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2001 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_DOC complete
+---- GN_NH4_N
+---- STEP_2: solute data prep
+---- GN_NH4_N timestamp 
+----     time: 2022-12-16 18:08:36 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- (STEP_3) good years: 1997 
+---- (STEP_3) good years: 1998 
+---- (STEP_3) good years: 1999 
+---- (STEP_3) total good years: 3 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 1997 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1998 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1999 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_NH4_N complete
+---- GN_NO3_N
+---- STEP_2: solute data prep
+---- GN_NO3_N timestamp 
+----     time: 2022-12-16 18:08:59 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- (STEP_3) good years: 1993 
+---- (STEP_3) good years: 1997 
+---- (STEP_3) good years: 1998 
+---- (STEP_3) good years: 1999 
+---- (STEP_3) good years: 2001 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 11 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 1993 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1997 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1998 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1999 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2001 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_NO3_N complete
+---- GN_SRP
+---- STEP_2: solute data prep
+---- GN_SRP timestamp 
+----     time: 2022-12-16 18:09:56 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- (STEP_3) good years: 1997 
+---- (STEP_3) good years: 1998 
+---- (STEP_3) good years: 1999 
+---- (STEP_3) good years: 2001 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 1997 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1998 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1999 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2001 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_SRP complete
+---- GN_TN
+---- STEP_2: solute data prep
+---- GN_TN timestamp 
+----     time: 2022-12-16 18:10:51 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- (STEP_3) good years: 1990 
+---- (STEP_3) good years: 1993 
+---- (STEP_3) good years: 1997 
+---- (STEP_3) good years: 1998 
+---- (STEP_3) good years: 1999 
+---- (STEP_3) total good years: 5 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 1990 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1993 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1997 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1998 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1999 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_TN complete
+---- GN_TP
+---- STEP_2: solute data prep
+---- GN_TP timestamp 
+----     time: 2022-12-16 18:11:18 America/New_York
+date:2022-12-16
+---- STEP_3: data checks
+---- (STEP_3) good years: 1993 
+---- (STEP_3) good years: 1997 
+---- (STEP_3) good years: 1998 
+---- (STEP_3) good years: 1999 
+---- (STEP_3) good years: 2006 
+---- (STEP_3) good years: 2008 
+---- (STEP_3) good years: 2009 
+---- (STEP_3) good years: 2010 
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 10 
+---- STEP_4: calculate flux 
+---- STEP_4_1_ERROR: calculate WRTDS EXCLUDED
+---- (STEP_4_1) past WRTDS, starting years next 
+------ (STEP_4) 1993 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1997 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1998 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 1999 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2006 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2008 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2009 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2010 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 338082 
+------ STEP_4_2: calculate average 
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_TP complete
+-- STEP_8: N01B flux attempting write
+-- STEP_8_SUCCESS: N01B flux written to file
+STEP_8: N01B annual flux
+end, time: 2022-12-16 18:12:13 America/New_York
+date:2022-12-16

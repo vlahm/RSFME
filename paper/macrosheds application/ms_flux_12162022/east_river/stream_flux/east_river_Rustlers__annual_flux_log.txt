@@ -1,0 +1,1473 @@
+east_river annual flux log
+time: 2022-12-12 11:52:45 America/New_York
+date:2022-12-12
+-- Rustlers
+-- STEP_1: read in site info and all chem and discharge data
+---- GN_Ag
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ag complete
+---- GN_Al
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Al complete
+---- GN_As
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_As complete
+---- GN_B
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 3 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_B complete
+---- GN_Ba
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ba complete
+---- GN_Be
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Be complete
+---- GN_Ca
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ca complete
+---- GN_Cd
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Cd complete
+---- GN_Cl
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 3 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Cl complete
+---- GN_Co
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Co complete
+---- GN_Cr
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Cr complete
+---- GN_Cs
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Cs complete
+---- GN_Cu
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Cu complete
+---- GN_DIC
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 2 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_DIC complete
+---- GN_DOC
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) total good years: 2 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_DOC complete
+---- GN_Eu
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Eu complete
+---- GN_F
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+---- STEP_4_1_ERROR: calculate WRTDS failed 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_F complete
+---- GN_Fe
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Fe complete
+---- GN_Ge
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 3 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ge complete
+---- GN_K
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_K complete
+---- GN_Li
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Li complete
+---- GN_Mg
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Mg complete
+---- GN_Mn
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Mn complete
+---- GN_Mo
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Mo complete
+---- GN_Na
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Na complete
+---- GN_NH3_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Ni
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ni complete
+---- GN_NO3_N
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 3 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_NO3_N complete
+---- GN_P
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_P complete
+---- GN_Pb
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Pb complete
+---- GN_PO4_P
+---- STEP_2: solute data prep
+---- STEP_2_ERROR: solute failed to read in data
+---- GN_Rb
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Rb complete
+---- GN_Sb
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 2 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Sb complete
+---- GN_Se
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Se complete
+---- GN_Si
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Si complete
+---- GN_Sn
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 2 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2016 complete
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Sn complete
+---- GN_SO4_S
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 3 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_SO4_S complete
+---- GN_Sr
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Sr complete
+---- GN_TDN
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- STEP_3_ERROR: no good years 
+---- GN_Th
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) total good years: 1 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Th complete
+---- GN_Ti
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Ti complete
+---- GN_U
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_U complete
+---- GN_V
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_V complete
+---- GN_Zn
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Zn complete
+---- GN_Zr
+---- STEP_2: solute data prep
+---- STEP_3: data checks
+---- (STEP_3) good years: 2016 
+---- (STEP_3) good years: 2017 
+---- (STEP_3) good years: 2018 
+---- (STEP_3) good years: 2019 
+---- (STEP_3) total good years: 4 
+---- STEP_4: calculate flux 
+---- STEP_4_1: calculate WRTDS 
+------ (STEP_4) 2016 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2017 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ (STEP_4) 2018 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ (STEP_4) 2019 flux calcs (paralell) 
+------ (STEP_4)       session: 7751 
+------ STEP_4_2: calculate average 
+------ STEP_4_3: calculate period weighted 
+------ STEP_4_4: calculate beale 
+------ STEP_4_5: calculate rating
+------ STEP_4_6: calculate composite
+------ STEP_5: flux meta operations (recomendation) 
+------ STEP_6: combine fluxes 
+------ STEP_6_SUCCESS: 2019 complete
+---- STEP_7: combine flux calcs
+---- STEP_7_SUCCESS: GN_Zr complete
+-- STEP_8: Rustlers flux attempting write
+-- STEP_8_SUCCESS: Rustlers flux written to file
+STEP_8: Rustlers annual flux
+end, time: 2022-12-12 12:02:51 America/New_York
+date:2022-12-12

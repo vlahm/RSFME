@@ -1,28 +1,24 @@
 # MacroSheds
 library(devtools)
-install_github("https://github.com/MacroSHEDS/macrosheds.git")
+#install_github("https://github.com/MacroSHEDS/macrosheds.git")
 library(macrosheds)
 library(here)
 library(RiverLoad)
-library(tidyverse)
-library(patchwork)
 
-source('source/usgs_helpers.R')
+source('streamlined/source/usgs_helpers.R')
 source('source/helper_functions.R')
-source('source/flux_methods.R')
 
-# stage data ####
-# declare ms core dir
+#declare ms core dir
 my_ms_dir <- here('streamlined/data/ms')
 
 # load in a df of MS sites with
-ms <- ms_load_sites() %>%
+ms <- ms_download_site_data() %>%
     select(site_code, ws_area_ha, latitude, longitude) %>%
     rename(lat = latitude,
            long = longitude)
 
 # get Q for RBI calc
-ms_sites_ls <- unique(ms$site_code)
+ms_sites_ls <- unique(ms_sites$site_code)
 raw_data_q <- ms_load_product(
     my_ms_dir,
     prodname = "discharge",
@@ -31,6 +27,7 @@ raw_data_q <- ms_load_product(
     warn = F
 )
 
+#acutal_ms_site_ls <- 
 actual_files <- list.files('streamlined/data/ms', full.names = T, recursive = T)
 actual_files_ls <- tibble(file = actual_files) %>%
     filter(grepl('stream_chemistry', file),
@@ -40,9 +37,9 @@ actual_files_ls <- tibble(file = actual_files) %>%
     filter(site_code %in% unique(raw_data_q$site_code)) %>%
     pull(site_code)
 
-# prep w2 data #####
-# set detials
-s <- "w3"
+##### for ws2 #####
+# for each MS sites
+s <- actual_files_ls[53] #58
 ms_dir <- my_ms_dir
 
 # load in site area
@@ -67,6 +64,7 @@ raw_data_chem <- ms_load_product(
 )
 
 # join data
+
 ms_q <- raw_data_q %>%
     #filter(ms_status == 0) %>%
     pivot_wider(id_cols = c(datetime, site_code),
@@ -101,7 +99,7 @@ out_frame <- tibble(wy = as.integer(),
                     flux = as.numeric(),
                     site_code = as.character(),
                     method = as.character())
-# calc different flux methods ####
+### calc different flux methods
 for(y in unique(ms_comb$wy)) {
     ms_df_wy <- ms_comb %>%
         filter(wy == y) %>%
@@ -137,9 +135,9 @@ for(y in unique(ms_comb$wy)) {
         
         rating_wy <- calculate_rating(chem_df = chem_df, q_df = q_df)
         
-        composite_wy <- generate_residual_corrected_con(chem_df = chem_df, q_df = q_df, sitecol = 'site_code') %>%
-                rename(datetime = date) %>%
-                calculate_composite_from_rating_filled_df()
+        composite_wy <- calculate_composite_from_rating_filled_df(
+            generate_residual_corrected_con(chem_df = chem_df, q_df = q_df)
+        )
         
         append_frame <- tibble(wy = y,
                             flux = c(pw_wy[[1]], beale_wy[[1]], 
@@ -158,8 +156,7 @@ for(y in unique(ms_comb$wy)) {
     
 }
 
-# compute difference from mean ####
-w3_dif_by_wy <- out_frame %>%
+w1_dif_by_wy <- out_frame %>%
     mutate(wy = as.integer(as.character(wy))) %>%
     pivot_wider(names_from = 'method', values_from = 'flux') %>%
     na.omit() %>%
@@ -172,8 +169,7 @@ w3_dif_by_wy <- out_frame %>%
                  cols = -c(wy, site_code)) %>%
     left_join(., cq_by_wy, by = 'wy')
 
-# compute ts with simplified aulenbach et al 2016 decision ####
-w3_load_by_wy <- out_frame %>%
+w1_load_by_wy <- out_frame %>%
     mutate(wy = as.integer(as.character(wy))) %>%
     filter(wy != 2021,
            method != 'mean') %>%
@@ -186,14 +182,10 @@ w3_load_by_wy <- out_frame %>%
                  cols = c(pw, beale, rating, composite, best_value))
 
 
-ggplot(w3_load_by_wy, aes(x = as.integer(wy), y = load, color = method))+
-  geom_point()+
-  geom_line()
-
 
 ggplot(filter(w1_load_by_wy, method %in% c('pw', 'composite')), aes(x = as.integer(as.character(wy)),
                           y = load, fill = method))+
     geom_col()+
-    #theme_few()
+    theme_few()
     facet_wrap(~method,
                ncol = 1)

@@ -35,50 +35,49 @@ calculate_pw <- function(chem_df, q_df, datecol = 'date', period = NULL){
   }
 
   if(is.null(period)){
-  flux_from_pw <- RiverLoad::method6(rl_data, ncomp = 1) %>%
+  flux_from_pw <- method6(rl_data, ncomp = 1) %>%
     sum(.)/(1000*area)
   }else{
 
   if(period == 'month'){
-
-      method6_month <- function (db, ncomp, period){
-          if (requireNamespace("imputeTS")) {
-              n <- nrow(db)
-              interpolation <- data.frame(imputeTS::na_interpolation(db,
-                                                                     "linear"))
-              load <- data.frame(interpolation[, 2] * interpolation[,
-                                                                    -c(1:2)])
-              difference <- matrix(nrow = (nrow(db) - 1), ncol = 1)
-                for (i in 1:(nrow(db) - 1)) {
-                    difference[i] <- difftime(db[i + 1, 1], db[i, 1],
-                                            units = "days")
-            }
-
-              loadtot <- cbind.data.frame(interpolation$datetime[-nrow(interpolation)],
-                                          flux)
-              colnames(loadtot)[1] <- c("datetime")
-              loadtot[, 1] <- format(as.POSIXct(loadtot[, 1]), format = "%Y-%m")
-              forrow <- aggregate(loadtot[, 2] ~ datetime, loadtot,
-                                  sum)
-              agg.dataC <- matrix(nrow = nrow(forrow), ncol = (ncomp))
-              for (i in 1:ncomp) {
-                  agg.data <- aggregate(loadtot[, i + 1] ~ datetime,
-                                        loadtot, sum)
-                  agg.dataC[, i] <- as.matrix(agg.data[, 2])
-              }
-              colnames(agg.dataC) <- c(names(db)[3:(ncomp + 2)])
-              rownames(agg.dataC) <- forrow$datetime
-              return(agg.dataC)
-          }
-
-              colnames(agg.dataC) <- c(names(db)[3:(ncomp + 2)])
-              rownames(agg.dataC) <- forrow$datetime
-              return(agg.dataC)
-      }
+    #   method6_month <- function (db, ncomp, period){
+    #       if (requireNamespace("imputeTS")) {
+    #           n <- nrow(db)
+    #           interpolation <- data.frame(imputeTS::na_interpolation(db,
+    #                                                                  "linear"))
+    #           load <- data.frame(interpolation[, 2] * interpolation[,
+    #                                                                 -c(1:2)])
+    #           difference <- matrix(nrow = (nrow(db) - 1), ncol = 1)
+    #             for (i in 1:(nrow(db) - 1)) {
+    #                 difference[i] <- difftime(db[i + 1, 1], db[i, 1],
+    #                                         units = "days")
+    #         }
+    #
+    #           loadtot <- cbind.data.frame(interpolation$datetime[-nrow(interpolation)],
+    #                                       flux)
+    #           colnames(loadtot)[1] <- c("datetime")
+    #           loadtot[, 1] <- format(as.POSIXct(loadtot[, 1]), format = "%Y-%m")
+    #           forrow <- aggregate(loadtot[, 2] ~ datetime, loadtot,
+    #                               sum)
+    #           agg.dataC <- matrix(nrow = nrow(forrow), ncol = (ncomp))
+    #           for (i in 1:ncomp) {
+    #               agg.data <- aggregate(loadtot[, i + 1] ~ datetime,
+    #                                     loadtot, sum)
+    #               agg.dataC[, i] <- as.matrix(agg.data[, 2])
+    #           }
+    #           colnames(agg.dataC) <- c(names(db)[3:(ncomp + 2)])
+    #           rownames(agg.dataC) <- forrow$datetime
+    #           return(agg.dataC)
+    #       }
+    #
+    #           colnames(agg.dataC) <- c(names(db)[3:(ncomp + 2)])
+    #           rownames(agg.dataC) <- forrow$datetime
+    #           return(agg.dataC)
+    # }
 
       ##### apply #####
 
-      flux_from_pw <- method6_month(rl_data, ncomp = 1, period = period)
+      flux_from_pw <- method6(rl_data, ncomp = 1, period = 'month')
 
       flux_from_pw <- tibble(date = rownames(flux_from_pw),
                           flux = (flux_from_pw[,1]/(1000*area)))
@@ -442,6 +441,7 @@ adapt_ms_egret <- function(chem_df, q_df, ws_size, lat, long,
         ms_vars <- macrosheds::ms_download_variables()
         site_code <- unique(stream_chemistry$site_code)
 
+
         #### Prep Files ####
 
         if(prep_data){
@@ -629,12 +629,6 @@ adapt_ms_egret <- function(chem_df, q_df, ws_size, lat, long,
         var_unit <- ms_vars %>%
             filter(variable_code == !!var) %>%
             pull(unit)
-
-      if(length(var_unit) == 0) {
-        print("length of var_unit for this flux calc is zero, setting var_unit to NA")
-        var_unit <- NA
-      }
-
         site_lat <- site_data %>%
             filter(site_code == !!site_code) %>%
             pull('latitude')
