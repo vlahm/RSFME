@@ -17,12 +17,12 @@ source(here('paper/coarsen_plot/coarsen_helpers.R'))
 
 # set watershed attributes #####
 area <- 122
-site_code = 'UHF'
+site_code <- 'UHF'
 
 # begin solute loop ####
-for(i in c('NO3-N mg/l', 'Ca mg/l')){
+for(s in c('NO3-N mg/l', 'Ca mg/l')){
     ## set solute #####
-    target_solute = i
+    target_solute = s
 
     ## read in data ####
     d <- read_csv(here('paper/plynlimon_discussion/PlynlimonHighFrequencyHydrochemistry.csv')) %>%
@@ -31,7 +31,7 @@ for(i in c('NO3-N mg/l', 'Ca mg/l')){
         mutate(wy = water_year(date_time, origin = 'usgs'),
                q_lps = `water flux mm/hr`*area*(1000/1)*(1/10000)*(1/3600)*(1000/1)) #convert from mm to mm, ha to m2, hr to sec, and m3 to L
 
-    ## subset to 2016 wy ####
+    ## subset to 2008 wy ####
     target_wy <- 2008
     dn <- d %>%
         filter(wy == target_wy) %>%
@@ -74,12 +74,13 @@ for(i in c('NO3-N mg/l', 'Ca mg/l')){
     loop_vec <- c(seq(from = 1, to = 3, by = 1),
                   seq(from = 4, to = 48, by = 3),
                   96,
-                  192)
+              192)
 
     ## Start coarsening loop ####
     reps <- 100
     for(i in loop_vec){
         n = i
+        print(paste0('i=', n))
 
         for(j in 1:reps){
             loopid <- loopid+1
@@ -88,29 +89,27 @@ for(i in c('NO3-N mg/l', 'Ca mg/l')){
                                             con = nth_element(dn$con, 1, n = start_pos))
             names(coarse_chem)[loopid] <- paste0('sample_',n)
         }
-
-            ## Start method application loop ####
-            out_tbl <- tibble(method = as.character(), estimate = as.numeric(), n = as.integer())
-            for(k in 2:length(coarse_chem)){
-
-                n <- as.numeric(str_split_fixed(names(coarse_chem[k]), pattern = 'sample_', n = 2)[2])
-
-                chem_df <- coarse_chem[[k]] %>%
-                    group_by(lubridate::yday(date)) %>%
-                    summarize(date = date(date),
-                              con = mean(con)) %>%
-                    ungroup() %>%
-                    unique() %>%
-                    select(date, con) %>%
-                    mutate(site_code = 'w3', wy = target_wy)
-
-                out_tbl <- apply_methods_coarse(chem_df, q_df) %>%
-                    mutate(n = n) %>%
-                    rbind(., out_tbl)
-            }
-}
-
-            ## save/load data from previous runs #####
-            if(target_solute == 'Ca mg/l'){save(out_tbl, file = here('paper','plynlimon_discussion', '100reps_annual_Ca.RData'))}
-            if(target_solute == 'NO3-N mg/l'){save(out_tbl, file = here('paper','plynlimon_discussion', '100reps_annual_NO3.RData'))}
+        }
+    ## Start method application loop ####
+    out_tbl <- tibble(method = as.character(), estimate = as.numeric(), n = as.integer())
+    for(k in 1:length(coarse_chem)){
+        n <- as.numeric(str_split_fixed(names(coarse_chem[k]), pattern = 'sample_', n = 2)[2])
+        chem_df <- coarse_chem[[k]] %>%
+            group_by(lubridate::yday(date)) %>%
+            summarize(date = date(date),
+                      con = mean(con)) %>%
+            ungroup() %>%
+            unique() %>%
+            select(date, con) %>%
+            mutate(site_code = site_code, wy = target_wy)
+        out_tbl <- apply_methods_coarse(chem_df, q_df) %>%
+            mutate(n = n) %>%
+            rbind(., out_tbl)
+        print(paste0(k, ' DONE'))
     }
+    ## save/load data from previous runs #####
+    if(target_solute == 'Ca mg/l'){write_csv(out_tbl, file = here('paper','plynlimon_discussion', '100reps_annual_Ca.csv'))}
+    if(target_solute == 'NO3-N mg/l'){write_csv(out_tbl, file = here('paper','plynlimon_discussion', '100reps_annual_NO3.csv'))}
+
+
+}

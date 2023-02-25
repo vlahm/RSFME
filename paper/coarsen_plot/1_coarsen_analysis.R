@@ -83,6 +83,7 @@ for(i in c('IS_NO3', 'IS_spCond')){
     reps <- 100
     for(i in loop_vec){
         n = i
+        print(paste0('i=', n))
 
         for(j in 1:reps){
             loopid <- loopid+1
@@ -90,14 +91,16 @@ for(i in c('IS_NO3', 'IS_spCond')){
             coarse_chem[[loopid]] <- tibble(date =  nth_element(dn$date, 1, n = start_pos),
                                             con = nth_element(dn$con, 1, n = start_pos))
             names(coarse_chem)[loopid] <- paste0('sample_',n)
+        }
+        }
 
     ## Start method application loop ####
     out_tbl <- tibble(method = as.character(), estimate = as.numeric(), n = as.integer())
-    for(i in 2:length(coarse_chem)){
+    for(k in 2:length(coarse_chem)){
 
-        n <- as.numeric(str_split_fixed(names(coarse_chem[i]), pattern = 'sample_', n = 2)[2])
+        n <- as.numeric(str_split_fixed(names(coarse_chem[k]), pattern = 'sample_', n = 2)[2])
 
-        chem_df <- coarse_chem[[i]] %>%
+        chem_df <- coarse_chem[[k]] %>%
             group_by(lubridate::yday(date)) %>%
             summarize(date = date(date),
                       con = mean(con)) %>%
@@ -109,7 +112,7 @@ for(i in c('IS_NO3', 'IS_spCond')){
         out_tbl <- apply_methods_coarse(chem_df, q_df) %>%
             mutate(n = n) %>%
             rbind(., out_tbl)
-                                }
+        }
 
     ## save/load data from previous runs #####
     if(target_solute == 'IS_spCond'){save(out_tbl, file = here('paper','coarsen_plot', '100reps_annual_Ca.RData'))}
