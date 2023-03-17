@@ -2,7 +2,7 @@ calculate_truth <- function(raw_chem_list, q_df, period = period, flow_regime = 
     if(period == 'annual'){
         chem_df <- tibble(datetime = dn$datetime, con = raw_chem_list) %>%
             group_by(lubridate::yday(datetime)) %>%
-            summarize(date = date(datetime),
+            summarize(date = lubridate::date(datetime),
                       con = mean(con)) %>%
             ungroup() %>%
             unique() %>%

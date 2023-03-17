@@ -16,13 +16,13 @@ area <- 42.4
 site_code = 'w3'
 
 # HBEF Flux Method Comparison
-w3_chem <- read_feather('data/ms/hbef/stream_chemistry/w3.feather') %>%
+w3_chem <- read_feather('paper/macrosheds_application/ms_flux_12162022/hbef/stream_chemistry/w3.feather') %>%
     mutate(var = ms_drop_var_prefix(var)) %>%
     distinct(datetime, site_code, var, .keep_all = TRUE) %>%
     pivot_wider(names_from = var, values_from = val, id_cols = c('datetime', 'site_code')) %>%
     filter(!is.na(Ca), !is.na(spCond))
 
-w3_flux <- read_feather('data/ms/hbef/stream_flux/w3.feather') %>%
+w3_flux <- read_feather('paper/macrosheds_application/ms_flux_12162022/hbef/stream_flux/w3.feather') %>%
     mutate(var = ms_drop_var_prefix(var)) %>%
     select(-ms_recommended) %>%
     distinct(wy, site_code, method, var, .keep_all = TRUE) %>%
@@ -30,7 +30,7 @@ w3_flux <- read_feather('data/ms/hbef/stream_flux/w3.feather') %>%
     filter(!is.na(Ca),
            site_code == 'w3')
 
-w3_recc <- read_feather('data/ms/hbef/stream_flux/w3.feather') %>%
+w3_recc <- read_feather('paper/macrosheds_application/ms_flux_12162022/hbef/stream_flux/w3.feather') %>%
     mutate(var = ms_drop_var_prefix(var)) %>%
     filter(ms_recommended == 1,
            var == 'Ca') %>%
@@ -63,7 +63,7 @@ w3_flux_methods <- w3_flux %>%
     select(wy, method, Ca)
 
 # bring in 'true' flux Ca from sensor
-w3_flux_true <- read_feather("data/ms/hbef/true/w3_sensor_wdisch.feather") %>%
+w3_flux_true <- read_feather("paper/macrosheds_application/ms_flux_12162022/hbef/true/w3_sensor_wdisch.feather") %>%
     mutate(wy = water_year(date, origin = 'usgs')) %>%
     group_by(wy) %>%
     summarise(Ca = sum(IS_spCond, na.rm = TRUE)*lm_fit$coef[[2]]) %>%
@@ -71,7 +71,7 @@ w3_flux_true <- read_feather("data/ms/hbef/true/w3_sensor_wdisch.feather") %>%
            method = 'true') %>%
     select(-Ca, Ca)
 
-d <- read_feather('C:/Users/gubbi/desktop/w3_sensor_wdisch.feather') %>%
+d <- read_feather('paper/macrosheds_application/ms_flux_12162022/hbef/true/w3_sensor_wdisch.feather') %>%
     mutate(wy = water_year(datetime, origin = 'usgs'))
 
 w3_true <- tibble(wy = as.integer(),

@@ -89,7 +89,7 @@ for(s in c('NO3-N mg/l', 'Ca mg/l')){
                                             con = nth_element(dn$con, 1, n = start_pos))
             names(coarse_chem)[loopid] <- paste0('sample_',n)
         }
-        }
+    }
     ## Start method application loop ####
     out_tbl <- tibble(method = as.character(), estimate = as.numeric(), n = as.integer())
     for(k in 1:length(coarse_chem)){
@@ -110,6 +110,4 @@ for(s in c('NO3-N mg/l', 'Ca mg/l')){
     ## save/load data from previous runs #####
     if(target_solute == 'Ca mg/l'){write_csv(out_tbl, file = here('paper','plynlimon_discussion', '100reps_annual_Ca.csv'))}
     if(target_solute == 'NO3-N mg/l'){write_csv(out_tbl, file = here('paper','plynlimon_discussion', '100reps_annual_NO3.csv'))}
-
-
 }

@@ -21,7 +21,7 @@ site_code = 'w3'
 target_solute = 'IS_NO3'
 
 # read in data ####
-d <- read_feather('C:/Users/gubbi/desktop/w3_sensor_wdisch.feather') %>%
+d <- read_feather('paper/macrosheds_application/ms_flux_12162022/hbef/true/w3_sensor_wdisch.feather') %>%
     mutate(wy = water_year(datetime, origin = 'usgs'))
 
 # subset to 2016 wy ####

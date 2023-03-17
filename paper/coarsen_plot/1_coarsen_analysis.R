@@ -20,12 +20,10 @@ area <- 42.4
 site_code = 'w3'
 
 # begin solute loop ####
-for(i in c('IS_NO3', 'IS_spCond')){
-    ## set solute #####
-    target_solute = i
+for(target_solute in c('IS_NO3', 'IS_spCond')){
 
     ## read in data ####
-    d <- read_feather('C:/Users/gubbi/desktop/w3_sensor_wdisch.feather') %>%
+    d <- read_feather('paper/macrosheds_application/ms_flux_12162022/hbef/true/w3_sensor_wdisch.feather') %>%
         mutate(wy = water_year(datetime, origin = 'usgs'))
 
     ## subset to 2016 wy ####
@@ -59,10 +57,10 @@ for(i in c('IS_NO3', 'IS_spCond')){
         unique() %>%
         mutate(site_code = 'w3', wy = target_wy)
 
-        out_val <- generate_residual_corrected_con(chem_df = chem_df, q_df = q_df, sitecol = 'site_code') %>%
-            rename(datetime = date) %>%
-            calculate_composite_from_rating_filled_df() %>%
-            pull(flux)
+    out_val <- generate_residual_corrected_con(chem_df = chem_df, q_df = q_df, sitecol = 'site_code') %>%
+        rename(datetime = date) %>%
+        calculate_composite_from_rating_filled_df() %>%
+        pull(flux)
     truth <- tibble(method = 'truth', estimate = out_val)
 
     ## make gradually coarsened chem ###
@@ -92,11 +90,13 @@ for(i in c('IS_NO3', 'IS_spCond')){
                                             con = nth_element(dn$con, 1, n = start_pos))
             names(coarse_chem)[loopid] <- paste0('sample_',n)
         }
-        }
+    }
 
     ## Start method application loop ####
     out_tbl <- tibble(method = as.character(), estimate = as.numeric(), n = as.integer())
     for(k in 2:length(coarse_chem)){
+
+        if(k %% 100 == 0) print(paste0(k, '/', length(coarse_chem)))
 
         n <- as.numeric(str_split_fixed(names(coarse_chem[k]), pattern = 'sample_', n = 2)[2])
 
@@ -112,7 +112,7 @@ for(i in c('IS_NO3', 'IS_spCond')){
         out_tbl <- apply_methods_coarse(chem_df, q_df) %>%
             mutate(n = n) %>%
             rbind(., out_tbl)
-        }
+    }
 
     ## save/load data from previous runs #####
     if(target_solute == 'IS_spCond'){save(out_tbl, file = here('paper','coarsen_plot', '100reps_annual_Ca.RData'))}
