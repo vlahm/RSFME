@@ -1,0 +1,7 @@
+ts_simulation
+coarsen_plot
+plynlimon_discussion
+macrosheds_application
+hbef_corr_exploration
+hbef_comparison_fig
+supp_figure_creation
